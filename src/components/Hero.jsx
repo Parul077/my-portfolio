@@ -2,7 +2,10 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center px-6 md:px-20 pt-24 overflow-hidden bg-[#0a192f]">
+    <section
+      id="about"
+      className="min-h-screen flex items-center px-6 md:px-20 pt-24 overflow-hidden bg-[#0a192f]"
+    >
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(100,255,218,0.08),transparent_40%)] pointer-events-none"></div>
       <div className="max-w-4xl">
         {/* Small Intro */}
