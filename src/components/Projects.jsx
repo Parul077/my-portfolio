@@ -2,6 +2,13 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Solar Panel Defect Classifier",
+    desc: "An AI-powered web application that detects defects in solar panels using deep learning. Upload an image and get instant predictions with confidence scores and detailed insights.",
+    tech: ["TensorFlow", "CNN", "Streamlit", "Pillow"],
+    github: "https://github.com/Parul077/Solar_panel_defect_classifier",
+    // live: "#"
+  },
+  {
     title: "Fake News Detection",
     desc: "Detects fake news using machine learning and NLP techniques.",
     tech: ["Python", "Scikit-learn", "NLP"],

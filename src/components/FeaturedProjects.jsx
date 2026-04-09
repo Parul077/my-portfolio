@@ -1,20 +1,22 @@
 import { motion } from "framer-motion";
 import chatbotImg from "../assets/ai-course-chatbot-image.png";
-import solarImg from "../assets/solar-panel.png";
+import aiCoachImg from "../assets/ai-career-coach.png";
 
 const featuredProjects = [
   {
-    title: "Solar Panel Defect Classifier",
-    desc: "An AI-powered web application that detects defects in solar panels using deep learning. Upload an image and get instant predictions with confidence scores and detailed insights.",
-    tech: ["TensorFlow", "CNN", "Streamlit", "Pillow"],
-    github: "https://github.com/Parul077/Solar_panel_defect_classifier",
-    image: solarImg, // add image later
+    title: "AI Career Coach",
+    desc: "AI Career Coach is an intelligent, RAG-powered web application designed to transform your professional journey. By leveraging Large Language Models (LLMs) and advanced document retrieval, it provides instant resume evaluations, skill gap analysis, and expert career coaching tailored to your profile.",
+    tech: ["Flask", "LangChain", "FAISS", "Groq API"],
+    github: "https://github.com/Parul077/AI-Career-Coach",
+    live: "https://ai-career-coach-1-5e5m.onrender.com/",
+    image: aiCoachImg, // add image later
   },
   {
     title: "AI Course Chatbot",
     desc: "A smart chatbot designed to assist students with course queries using NLP and OpenAI. Includes session memory, analytics dashboard, and modern UI.",
     tech: ["Flask", "OpenRouter", "NLP", "LLM"],
     github: "https://github.com/Parul077/ai-course-chatbot",
+    // live: "https://your-live-link.com",
     image: chatbotImg,
   },
 ];
@@ -73,8 +75,29 @@ const FeaturedProjects = () => {
               </div>
 
               {/* Links */}
-              <div className="flex gap-4 mt-4 text-gray-300">
-                <a href={project.github}>🔗 GitHub</a>
+              {/* Links */}
+              <div className="flex gap-4 mt-6">
+                {/* GitHub */}
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 border border-[#64ffda] text-[#64ffda] text-sm rounded-md hover:bg-[#64ffda]/10 transition"
+                >
+                  GitHub
+                </a>
+
+                {/* Live Link (only if exists) */}
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-[#64ffda] text-[#0a192f] text-sm rounded-md hover:bg-[#52e0c4] transition"
+                  >
+                    Live Demo
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>

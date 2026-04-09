@@ -3,6 +3,20 @@ import { motion } from "framer-motion";
 const blogs = [
   {
     title:
+      "Machine Learning Pipelines: Automating Workflow and Preventing Data Leakage",
+    desc: "Machine Learning Pipelines automate the end-to-end workflow while ensuring data is processed correctly at each stage, helping prevent data leakage and improving model reliability.",
+    date: "2026-04-07",
+    link: "https://medium.com/@parulsingh1074/machine-learning-pipelines-automating-workflow-and-preventing-data-leakage-6b1f6bd6f92b",
+  },
+  {
+    title:
+      "Handling Imbalanced Datasets: Techniques for Better Model Performance",
+    desc: "Handling imbalanced datasets involves applying techniques like resampling, class weighting, and specialized algorithms to ensure models learn fairly from all classes and improve overall performance.",
+    date: "2026-04-03",
+    link: "https://medium.com/@parulsingh1074/handling-imbalanced-datasets-techniques-for-better-model-performance-c99bbab7ccde",
+  },
+  {
+    title:
       "Cross-Validation Techniques: Building Reliable Machine Learning Models",
     desc: "Explains different cross-validation methods like K-Fold and Stratified K-Fold to build reliable and generalizable machine learning models.",
     date: "2026-03-25",
@@ -38,18 +52,6 @@ const blogs = [
     desc: "Explores how Random Forest combines multiple decision trees to improve accuracy and reduce overfitting.",
     date: "2026-02-28",
     link: "https://medium.com/@parulsingh1074/random-forests-power-of-ensemble-learning-db5f92625255",
-  },
-  {
-    title: "Density-Based Clustering with DBSCAN",
-    desc: "Explains how DBSCAN clusters data based on density and detects outliers without predefined clusters.",
-    date: "2026-02-20",
-    link: "https://medium.com/@parulsingh1074/density-based-clustering-with-dbscan-38f5b5150740",
-  },
-  {
-    title: "Data Preprocessing for Machine Learning",
-    desc: "Covers essential preprocessing steps like cleaning, scaling, and encoding for effective ML models.",
-    date: "2026-01-15",
-    link: "https://medium.com/@parulsingh1074/data-preprocessing-for-machine-learning-5e4c6e8e8db9",
   },
 ];
 
