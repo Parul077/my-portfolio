@@ -1,23 +1,31 @@
 import { motion } from "framer-motion";
-import chatbotImg from "../assets/ai-course-chatbot-image.png";
 import aiCoachImg from "../assets/ai-career-coach.png";
+import queryPdfImg from "../assets/queryPDF.png";
+import solarImg from "../assets/solar.png";
 
 const featuredProjects = [
   {
     title: "AI Career Coach",
-    desc: "AI Career Coach is an intelligent, RAG-powered web application designed to transform your professional journey. By leveraging Large Language Models (LLMs) and advanced document retrieval, it provides instant resume evaluations, skill gap analysis, and expert career coaching tailored to your profile.",
-    tech: ["Flask", "LangChain", "FAISS", "Groq API"],
+    desc: "A RAG-based AI application that provides personalized career guidance, resume evaluation, and skill gap analysis using LLMs and vector search for context-aware responses.",
+    tech: ["Flask", "LangChain", "FAISS", "Groq API", "LLM", "Render"],
     github: "https://github.com/Parul077/AI-Career-Coach",
     live: "https://ai-career-coach-1-5e5m.onrender.com/",
-    image: aiCoachImg, // add image later
+    image: aiCoachImg,
   },
   {
-    title: "AI Course Chatbot",
-    desc: "A smart chatbot designed to assist students with course queries using NLP and OpenAI. Includes session memory, analytics dashboard, and modern UI.",
-    tech: ["Flask", "OpenRouter", "NLP", "LLM"],
-    github: "https://github.com/Parul077/ai-course-chatbot",
-    // live: "https://your-live-link.com",
-    image: chatbotImg,
+    title: "QueryPDF – AI Document Assistant",
+    desc: "An AI-powered system that allows users to query PDF documents using natural language through a RAG pipeline with semantic search and LLM-based responses.",
+    tech: ["Flask", "LangChain", "FAISS", "Groq API", "Embeddings"],
+    github:
+      "https://github.com/Parul077/QueryPDF-AI-Powered-Document-Assistant",
+    image: queryPdfImg,
+  },
+  {
+    title: "Solar Panel Defect Classification",
+    desc: "A deep learning-based system that detects and classifies solar panel defects using CNNs, with a Streamlit interface for real-time predictions.",
+    tech: ["TensorFlow", "CNN", "Streamlit", "Computer Vision"],
+    github: "https://github.com/Parul077/Solar_panel_defect_classifier",
+    image: solarImg,
   },
 ];
 
@@ -28,10 +36,10 @@ const FeaturedProjects = () => {
       className="px-6 md:px-20 py-20 bg-[#0a192f]"
     >
       {/* Title */}
-      <h2 className="text-2xl md:text-3xl font-bold text-[#ccd6f6] mb-16">
-        <span className="text-[#64ffda]"></span> Featured Projects
+      <h2 className="text-2xl md:text-3xl font-bold text-[#ccd6f6] mb-4">
+        Featured Projects
       </h2>
-      <div className="w-16 h-[2px] bg-[#64ffda] mt-2 mb-8"></div>
+      <div className="w-16 h-[2px] bg-[#64ffda] mb-12"></div>
 
       <div className="flex flex-col gap-24">
         {featuredProjects.map((project, index) => (
@@ -46,11 +54,11 @@ const FeaturedProjects = () => {
           >
             {/* Image */}
             <div className="md:w-1/2">
-              <div className="bg-[#112240]/80 backdrop-blur-md rounded-lg overflow-hidden shadow-lg">
+              <div className="bg-[#112240]/80 backdrop-blur-md rounded-lg overflow-hidden shadow-lg group">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover opacity-80 hover:scale-105 transition duration-300"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-300"
                 />
               </div>
             </div>
@@ -63,18 +71,22 @@ const FeaturedProjects = () => {
                 {project.title}
               </h3>
 
-              <div className="bg-[#112240] p-4 rounded-lg mt-4 text-gray-400 text-sm">
+              <div className="bg-[#112240] p-4 rounded-lg mt-4 text-gray-400 text-sm leading-relaxed">
                 {project.desc}
               </div>
 
-              {/* Tech */}
-              <div className="flex flex-wrap gap-3 mt-4 text-xs text-gray-500">
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2 mt-4">
                 {project.tech.map((t, i) => (
-                  <span key={i}>{t}</span>
+                  <span
+                    key={i}
+                    className="px-2 py-1 text-xs bg-[#64ffda]/10 text-[#64ffda] rounded"
+                  >
+                    {t}
+                  </span>
                 ))}
               </div>
 
-              {/* Links */}
               {/* Links */}
               <div className="flex gap-4 mt-6">
                 {/* GitHub */}
@@ -87,7 +99,7 @@ const FeaturedProjects = () => {
                   GitHub
                 </a>
 
-                {/* Live Link (only if exists) */}
+                {/* Live Demo */}
                 {project.live && (
                   <a
                     href={project.live}

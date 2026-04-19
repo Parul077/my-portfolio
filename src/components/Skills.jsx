@@ -1,20 +1,35 @@
 const Skills = () => {
   const skills = {
     Programming: ["Python", "JavaScript", "SQL", "HTML5", "CSS3"],
+
     "ML / AI": [
       "Machine Learning",
       "Deep Learning",
       "NLP",
       "CNN",
       "Feature Engineering",
+      "RAG (Retrieval-Augmented Generation)",
+      "Prompt Engineering",
+      "LLM Integration",
     ],
+
     "Data & Visualization": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "EDA"],
-    "Tools & Backend": [
+
+    "Frameworks & Libraries": [
+      "Scikit-learn",
+      "TensorFlow / Keras",
+      "LangChain",
+      "NLTK",
+    ],
+
+    "Backend, Tools & Deployment": [
       "Django",
       "Flask",
       "Streamlit",
       "Git & GitHub",
+      "Render",
       "Web Scraping",
+      "FAISS (Vector DB)",
     ],
   };
 
