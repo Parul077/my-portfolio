@@ -1,86 +1,116 @@
 import { motion } from "framer-motion";
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiArrowRight } from "react-icons/fi";
+
+const contacts = [
+  {
+    title: "Email",
+    value: "parulsingh1074@gmail.com",
+    icon: <FiMail size={22} />,
+    link: "mailto:parulsingh1074@gmail.com",
+  },
+  {
+    title: "LinkedIn",
+    value: "linkedin.com/in/parulsingh1074",
+    icon: <FiLinkedin size={22} />,
+    link: "https://www.linkedin.com/in/parulsingh1074/",
+  },
+  {
+    title: "GitHub",
+    value: "github.com/Parul077",
+    icon: <FiGithub size={22} />,
+    link: "https://github.com/Parul077",
+  },
+];
 
 const Contact = () => {
   return (
-    <section
-      id="contact"
-      className="px-6 md:px-20 py-24 bg-[#0a192f] text-center"
-    >
-      {/* Title */}
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-2xl md:text-3xl font-bold text-[#ccd6f6]"
-      >
-        <span className="text-[#64ffda]"></span> Get In Touch
-      </motion.h2>
+    <section id="contact" className="bg-[#0a192f] px-6 md:px-20 py-24">
+      <div className="max-w-5xl mx-auto text-center">
+        {/* Heading */}
 
-      {/* Subtitle */}
-      <motion.p
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        className="text-gray-400 mt-6 max-w-xl mx-auto"
-      >
-        I’m currently open to opportunities in machine learning, AI, and web
-        development. If you have a project, opportunity, or just want to
-        connect, feel free to reach out!
-      </motion.p>
-
-      {/* Email Button */}
-      <motion.a
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        href="mailto:parulsingh1074@gmail.com"
-        className="inline-block mt-8 border border-[#64ffda] text-[#64ffda] px-8 py-3 rounded hover:bg-[#64ffda]/10 transition"
-      >
-        Say Hello 👋
-      </motion.a>
-
-      {/* Social Links */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-        className="flex justify-center gap-6 mt-10 text-xl text-gray-400"
-      >
-        <a
-          href="https://github.com/Parul077"
-          target="_blank"
-          className="hover:text-[#64ffda] transition"
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl font-bold text-[#ccd6f6]"
         >
-          <FiGithub />
-        </a>
+          Let's Build Something Together
+        </motion.h2>
 
-        <a
-          href="https://www.linkedin.com/in/parulsingh1074/"
-          target="_blank"
-          className="hover:text-[#64ffda] transition"
-        >
-          <FiLinkedin />
-        </a>
+        <div className="w-16 h-[3px] rounded-full bg-[#64ffda] mt-4 mx-auto mb-6"></div>
 
-        <a
-          href="mailto:parulsingh1074@gmail.com"
-          className="hover:text-[#64ffda] transition"
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-2xl mx-auto text-gray-400 leading-8"
         >
-          <FiMail />
-        </a>
-      </motion.div>
-      <p className="text-gray-500 text-sm mt-12">
-        Designed & Built by{" "}
-        <a
-          href="https://github.com/Parul077"
-          target="_blank"
-          className="text-[#64ffda] hover:underline"
+          I'm currently seeking opportunities in Artificial Intelligence,
+          Machine Learning, and Software Development. Whether it's an
+          internship, full-time role, freelance project, or simply a
+          conversation about technology, I'd be happy to connect.
+        </motion.p>
+
+        {/* Contact Cards */}
+
+        <div className="grid md:grid-cols-3 gap-6 mt-14">
+          {contacts.map((item, index) => (
+            <motion.a
+              key={item.title}
+              href={item.link}
+              target={item.title !== "Email" ? "_blank" : undefined}
+              rel="noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-[#112240] border border-[#233554] rounded-xl p-6 hover:border-[#64ffda]/40 hover:-translate-y-1 transition"
+            >
+              <div className="flex justify-center text-[#64ffda] mb-4">
+                {item.icon}
+              </div>
+
+              <h3 className="text-lg font-semibold text-[#ccd6f6]">
+                {item.title}
+              </h3>
+
+              <p className="text-sm text-gray-400 mt-2 break-all">
+                {item.value}
+              </p>
+            </motion.a>
+          ))}
+        </div>
+
+        {/* CTA */}
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-16"
         >
-          Parul Singh
-        </a>{" "}
-        💻
-      </p>
+          <p className="text-[#64ffda] font-semibold">
+            Open to Internships • Full-Time • Freelance
+          </p>
+
+          <a
+            href="mailto:parulsingh1074@gmail.com"
+            className="inline-flex items-center gap-2 mt-6 px-8 py-3 rounded-lg border border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda]/10 transition"
+          >
+            Send an Email
+            <FiArrowRight />
+          </a>
+        </motion.div>
+
+        {/* Footer */}
+
+        <div className="mt-20 border-t border-[#233554] pt-8">
+          <p className="text-sm text-gray-500">
+            Designed & Built with <span className="text-[#64ffda]">❤</span> by{" "}
+            <span className="text-[#ccd6f6] font-medium">Parul Singh</span>
+          </p>
+        </div>
+      </div>
     </section>
   );
 };

@@ -68,13 +68,29 @@ const Blogs = () => {
   return (
     <section id="blogs" className="px-6 md:px-20 py-20 bg-[#0a192f]">
       {/* Title */}
-      <h2 className="text-2xl md:text-3xl font-bold text-[#ccd6f6] mb-10">
-        Blogs
-      </h2>
-      <div className="w-16 h-[2px] bg-[#64ffda] mt-2 mb-8"></div>
+      {/* Section Heading */}
+      <div className="mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#ccd6f6]">
+          Technical Writing
+        </h2>
 
-      {/* 🔥 Recent Blogs */}
-      <h3 className="text-lg text-[#64ffda] mb-6">Recent</h3>
+        <div className="w-16 h-[3px] rounded-full bg-[#64ffda] mt-4 mb-5"></div>
+
+        <p className="text-[#64ffda] text-lg font-semibold">
+          100+ Technical Articles on AI, Machine Learning & Deep Learning
+        </p>
+
+        <p className="mt-3 max-w-3xl text-gray-400 leading-relaxed">
+          Sharing practical insights on Artificial Intelligence, Machine
+          Learning, Deep Learning, and Software Development through in-depth
+          technical articles, tutorials, and implementation guides.
+        </p>
+      </div>
+
+      {/* Latest Blogs */}
+      <h3 className="text-lg font-semibold text-[#64ffda] mb-6">
+        Latest Articles
+      </h3>
 
       <div className="grid md:grid-cols-2 gap-6 mb-12">
         {recentBlogs.map((blog, index) => (
@@ -137,18 +153,9 @@ const Blogs = () => {
           href="https://medium.com/@parulsingh1074"
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-[#64ffda] text-[#64ffda] px-6 py-3 rounded hover:bg-[#64ffda]/10 transition"
-        >
-          Explore more of my writings on Medium →
-        </a>
-
-        <a
-          href="https://medium.com/@parulsingh1074"
-          target="_blank"
-          rel="noopener noreferrer"
           className="bg-[#64ffda] text-[#0a192f] px-6 py-3 rounded hover:opacity-90 transition"
         >
-          Subscribe
+          Visit my Medium →
         </a>
       </div>
     </section>
