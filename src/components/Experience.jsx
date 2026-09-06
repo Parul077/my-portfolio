@@ -2,7 +2,27 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    year: "July 2026 – Present",
+    year: "Aug 2026 - Present",
+    title: "Artificial Intelligence & Machine Learning Intern",
+    company: "FAC Infosec Private Limited",
+    description:
+      "Worked on the ERC Tracker platform to automate monitoring of Electricity Regulatory Commission websites and streamline regulatory document management.",
+    points: [
+      "Researching long-horizon error propagation and mitigation in AI agents, focusing on error detection and recovery.",
+      "Building a prototype for error detection, root-cause identification, corrective re-execution, and trajectory verification.",
+      "Integrated MySQL for structured document storage and retrieval.",
+      "Conducting experiments across different horizons and error positions to evaluate baseline and mitigation performance.",
+    ],
+    tech: [
+      "AI Agents",
+      "Error Detection & Recovery",
+      "Root Cause Analysis",
+      "Experimental Analysis",
+      "AI/ML Model Evaluation",
+    ],
+  },
+  {
+    year: "July 2026 – Aug 2026",
     title: "Freelance Software Developer",
     company: "Self-Employed",
     description:
@@ -30,9 +50,9 @@ const experiences = [
     ],
   },
   {
-    year: "SURGE Research Internship",
+    year: "May 2024 - July 2024 ",
     title: "Research Intern",
-    company: "Indian Institute of Technology Kanpur",
+    company: "SURGE Research Internship, Indian Institute of Technology Kanpur",
     description:
       "Worked on the ERC Tracker platform to automate monitoring of Electricity Regulatory Commission websites and streamline regulatory document management.",
     points: [

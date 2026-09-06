@@ -6,7 +6,7 @@ const quickFacts = [
   { label: "Location", value: "India" },
   { label: "Open To", value: "AI/ML • Software Engineering" },
 ];
-const learningAreas = ["Docker", "FastAPI"];
+const learningAreas = ["FastAPI"];
 
 const About = () => {
   return (

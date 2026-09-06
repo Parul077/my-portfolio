@@ -2,18 +2,17 @@ import { motion } from "framer-motion";
 
 const blogs = [
   {
-    title:
-      "Machine Learning Pipelines: Automating Workflow and Preventing Data Leakage",
-    desc: "Machine Learning Pipelines automate the end-to-end workflow while ensuring data is processed correctly at each stage, helping prevent data leakage and improving model reliability.",
-    date: "2026-04-07",
-    link: "https://medium.com/@parulsingh1074/machine-learning-pipelines-automating-workflow-and-preventing-data-leakage-6b1f6bd6f92b",
+    title: "Deep Learning for Time Series: Understanding Temporal Patterns",
+    desc: "Deep Learning for Time Series uses neural networks to capture complex temporal patterns, dependencies, and trends in sequential data, enabling accurate forecasting and prediction.",
+    date: "2026-09-06",
+    link: "https://medium.com/@parulsingh1074/deep-learning-for-time-series-understanding-temporal-patterns-61dbb6a33f09",
   },
   {
     title:
-      "Handling Imbalanced Datasets: Techniques for Better Model Performance",
-    desc: "Handling imbalanced datasets involves applying techniques like resampling, class weighting, and specialized algorithms to ensure models learn fairly from all classes and improve overall performance.",
-    date: "2026-04-03",
-    link: "https://medium.com/@parulsingh1074/handling-imbalanced-datasets-techniques-for-better-model-performance-c99bbab7ccde",
+      "Transfer Learning: Teaching New Tasks with Pretrained Neural Networks",
+    desc: "Transfer Learning reuses knowledge from pretrained neural networks and adapts it to new tasks, reducing training time, data requirements, and computational cost while improving performance.",
+    date: "2026-09-06",
+    link: "https://medium.com/@parulsingh1074/transfer-learning-teaching-new-tasks-with-pretrained-neural-networks-36d4435e4564",
   },
   {
     title:

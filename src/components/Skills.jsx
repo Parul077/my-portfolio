@@ -56,7 +56,14 @@ const skillCategories = [
   {
     title: "Tools & Deployment",
     icon: <Wrench size={22} />,
-    skills: ["Git", "GitHub", "Render", "Vercel", "Web Scraping & Automation"],
+    skills: [
+      "Docker",
+      "Git",
+      "GitHub",
+      "Render",
+      "Vercel",
+      "Web Scraping & Automation",
+    ],
   },
   {
     title: "AI Platforms & APIs",
