@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const stats = [
   { value: "10+", label: "AI/ML Projects" },
-  { value: "100+", label: "Technical Blogs" },
+  { value: "140+", label: "Technical Blogs" },
   { value: "15+", label: "Technologies" },
   { value: "8.62", label: "CGPA" },
 ];
