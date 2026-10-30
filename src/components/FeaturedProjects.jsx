@@ -1,12 +1,95 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { ExternalLink, CheckCircle2, Clock } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ExternalLink,
+  CheckCircle2,
+  Clock,
+  ChevronDown,
+  ChevronUp,
+  Cpu,
+} from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 import logoGR from "../assets/logo_GR.png"; // Your Glitch Room logo
 import aiCoachImg from "../assets/ai-career-coach.png";
 import queryPdfImg from "../assets/queryPDF.png";
 import solarImg from "../assets/solar.png";
+
+// Custom Futuristic Terminal Banner for Jev State Engine
+const JevEngineBanner = () => {
+  return (
+    <div className="relative w-full h-full bg-[#071324] overflow-hidden flex flex-col justify-between p-4 border border-[#233554] rounded-lg group select-none">
+      {/* Background Grid & Glow */}
+      <div
+        className="absolute inset-0 opacity-15 pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(#64ffda 1px, transparent 1px), linear-gradient(90deg, #64ffda 1px, transparent 1px)`,
+          backgroundSize: `24px 24px`,
+        }}
+      />
+      <div className="absolute top-0 right-0 w-44 h-44 bg-teal-500/10 rounded-full blur-3xl group-hover:bg-teal-500/20 transition-all duration-500" />
+      <div className="absolute bottom-0 left-0 w-36 h-36 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all duration-500" />
+
+      {/* Terminal Title Bar */}
+      <div className="relative z-10 flex items-center justify-between border-b border-[#233554]/80 pb-2">
+        <div className="flex items-center gap-1.5">
+          <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
+          <span className="text-[11px] font-mono text-gray-400 ml-2">
+            jev-state-engine // fsm-runtime
+          </span>
+        </div>
+        <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          Deterministic Gated IoC
+        </span>
+      </div>
+
+      {/* Visual Lifecycle Pipeline */}
+      <div className="relative z-10 my-auto py-2">
+        <div className="text-[10px] font-mono text-[#64ffda] uppercase tracking-wider mb-2 flex items-center justify-between">
+          <span>5-Stage Deterministic Lifecycle</span>
+          <span className="text-gray-400 font-mono text-[9px]">LangGraph • IoC</span>
+        </div>
+
+        {/* Stages Flow */}
+        <div className="grid grid-cols-5 gap-1 text-center font-mono">
+          {[
+            { name: "Investigate", tag: "S1" },
+            { name: "Plan", tag: "S2" },
+            { name: "Implement", tag: "S3" },
+            { name: "Gate T0/T1", tag: "Gated" },
+            { name: "Verify", tag: "Pass" },
+          ].map((stage) => (
+            <div
+              key={stage.name}
+              className="bg-[#0f2342] border border-[#233554] group-hover:border-[#64ffda]/40 rounded px-1 py-1.5 transition-all duration-300"
+            >
+              <span className="block text-[8px] text-gray-400 uppercase tracking-tight">
+                {stage.tag}
+              </span>
+              <span className="block text-[10px] font-bold text-gray-200 group-hover:text-[#64ffda] truncate">
+                {stage.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Terminal Telemetry Bar */}
+      <div className="relative z-10 flex items-center justify-between pt-2 border-t border-[#233554]/80 text-[10px] font-mono">
+        <div className="flex items-center gap-2 text-gray-300">
+          <span className="text-[#64ffda]">&gt;</span>
+          <span>sqlparse: 100% pass (509 tests, 0 reg.)</span>
+        </div>
+        <span className="text-cyan-300 font-semibold bg-[#112240] px-2 py-0.5 rounded border border-cyan-500/30">
+          ~4x Token Efficiency
+        </span>
+      </div>
+    </div>
+  );
+};
 
 // Custom Placeholder Component for Glitch Room / Coming Soon projects
 const GlitchRoomPlaceholder = () => {
@@ -52,6 +135,61 @@ const GlitchRoomPlaceholder = () => {
 
 const featuredProjects = [
   {
+    number: "01",
+    category: "AUTONOMOUS CODING RUNTIME",
+    status: "Completed",
+    title: "Jev State Engine",
+    subtitle: "Deterministic Gated Autonomous Coding Runtime",
+    description:
+      "An Inversion-of-Control (IoC) finite-state machine (LangGraph) orchestrating untrusted worker LLMs across a 5-stage deterministic lifecycle (Investigate, Plan, Implement, Gate, Verify) with mechanical two-tier gating, atomic Git worktree isolation, and local offline post-mortem diagnostics.",
+    highlights: [
+      "5-Stage IoC FSM (LangGraph)",
+      "Two-Tier Gating (AST + Semantic ≥0.50)",
+      "Atomic Worktrees (1-File Blast Radius)",
+      "Local Ollama CoT Post-Mortem",
+    ],
+    detailedPoints: [
+      {
+        title: "Architected Deterministic AI Coding Agent",
+        desc: "Engineered an Inversion-of-Control (IoC) finite-state machine (LangGraph) orchestrating untrusted worker LLMs across a 5-stage lifecycle (Investigate, Plan, Implement, Gate, Verify).",
+      },
+      {
+        title: "Two-Tier Authoritative Gating",
+        desc: "Built a mechanical AST and test compilation gate (Tier 0) that eliminates broken syntax at 0 LLM token cost, paired with a calibrated semantic evaluation gate (Tier 1) requiring ≥0.50 acceptance probability before code commits.",
+      },
+      {
+        title: "Blast Radius & Worktree Isolation",
+        desc: "Enforced atomic Git worktree isolation with rollback mechanisms, guaranteeing zero dirty state bleed and confining code mutations strictly to a 1-file blast radius.",
+      },
+      {
+        title: "Local Offline Post-Mortem Advisor",
+        desc: "Integrated local Ollama (qwen2.5-coder:1.5b) with active subgoal context injection to generate forensic Chain-of-Thought (CoT) root-cause diagnoses on gate strikes without data egress.",
+      },
+      {
+        title: "Empirical Multi-Repo Validation",
+        desc: "Evaluated across 17 recorded runs on industry repositories (sqlparse, python-humanize), achieving 100% first-pass completion on sqlparse (509 passing tests, 0 regressions) with ~9.7k total tokens—a ~4x token efficiency gain over unconstrained ReAct loops (~38k tokens).",
+      },
+      {
+        title: "Telemetry & Ledger Persistence",
+        desc: "Designed an immutable SQLite telemetry engine logging tokens, diff SHAs, gate verdicts, and export pipelines for model fine-tuning datasets (.jsonl).",
+      },
+    ],
+    tech: [
+      "Python",
+      "LangGraph",
+      "Git Worktrees",
+      "AST Analysis",
+      "SQLite",
+      "Ollama (Qwen 2.5 Coder)",
+      "Gemini API",
+      "Pytest",
+    ],
+    github: "https://github.com/Parul077/jev-state-engine",
+    live: null,
+    isJevEngine: true,
+  },
+  {
+    number: "02",
     category: "INTERACTIVE LEARNING PLATFORM",
     status: "Coming Soon",
     title: "Glitch Room",
@@ -70,6 +208,7 @@ const featuredProjects = [
     image: null, // Renders GlitchRoomPlaceholder automatically
   },
   {
+    number: "03",
     category: "RAG APPLICATION",
     status: "Live",
     title: "AI Career Coach",
@@ -88,6 +227,7 @@ const featuredProjects = [
     image: aiCoachImg,
   },
   {
+    number: "04",
     category: "RAG APPLICATION",
     status: "Completed",
     title: "QueryPDF",
@@ -106,6 +246,7 @@ const featuredProjects = [
     image: queryPdfImg,
   },
   {
+    number: "05",
     category: "COMPUTER VISION",
     status: "Completed",
     title: "Solar Panel Defect Classification",
@@ -139,6 +280,15 @@ const getStatusBadgeStyle = (status) => {
 };
 
 const FeaturedProjects = () => {
+  const [expandedProjects, setExpandedProjects] = useState({});
+
+  const toggleExpand = (title) => {
+    setExpandedProjects((prev) => ({
+      ...prev,
+      [title]: !prev[title],
+    }));
+  };
+
   return (
     <section
       id="featured-projects"
@@ -170,9 +320,11 @@ const FeaturedProjects = () => {
             >
               {/* Card Main Body */}
               <div>
-                {/* Banner: Image or Custom Placeholder */}
+                {/* Banner: Image, JevEngineBanner or Custom Placeholder */}
                 <div className="group overflow-hidden rounded-lg border border-[#233554] bg-[#0a192f] mb-4 h-48 w-full">
-                  {project.status === "Coming Soon" ? (
+                  {project.isJevEngine ? (
+                    <JevEngineBanner />
+                  ) : project.status === "Coming Soon" ? (
                     <GlitchRoomPlaceholder />
                   ) : (
                     <img
@@ -184,10 +336,15 @@ const FeaturedProjects = () => {
                 </div>
 
                 {/* Category & Status */}
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-semibold tracking-wider text-[#64ffda] truncate">
-                    {project.category}
-                  </span>
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <div className="flex items-center gap-2 truncate">
+                    <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-[#64ffda]/10 text-[#64ffda] border border-[#64ffda]/30">
+                      #{project.number}
+                    </span>
+                    <span className="text-xs font-semibold tracking-wider text-[#64ffda] truncate">
+                      {project.category}
+                    </span>
+                  </div>
                   <span
                     className={`text-[10px] px-2.5 py-0.5 rounded-full font-medium border shrink-0 ${getStatusBadgeStyle(
                       project.status,
@@ -230,6 +387,57 @@ const FeaturedProjects = () => {
                     ))}
                   </div>
                 </div>
+
+                {/* Detailed Architectural Pillars (if present) */}
+                {project.detailedPoints && (
+                  <div className="mt-4 pt-3 border-t border-[#233554]/60">
+                    <button
+                      onClick={() => toggleExpand(project.title)}
+                      className="flex items-center justify-between w-full text-xs font-medium text-[#64ffda] hover:text-[#64ffda]/80 transition-colors py-1 cursor-pointer bg-[#0a192f]/60 hover:bg-[#0a192f] border border-[#233554] rounded-lg px-3"
+                    >
+                      <span className="flex items-center gap-2">
+                        <Cpu size={14} className="text-[#64ffda]" />
+                        <span>
+                          {expandedProjects[project.title]
+                            ? "Hide Architecture & Benchmarks"
+                            : "View Architecture & Multi-Repo Benchmarks (6 Pillars)"}
+                        </span>
+                      </span>
+                      {expandedProjects[project.title] ? (
+                        <ChevronUp size={14} />
+                      ) : (
+                        <ChevronDown size={14} />
+                      )}
+                    </button>
+
+                    <AnimatePresence>
+                      {expandedProjects[project.title] && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="mt-3 space-y-2.5 overflow-hidden"
+                        >
+                          {project.detailedPoints.map((item, idx) => (
+                            <div
+                              key={idx}
+                              className="p-3 rounded-lg bg-[#0a192f]/90 border border-[#233554] text-xs transition-all hover:border-[#64ffda]/30"
+                            >
+                              <p className="font-semibold text-[#ccd6f6] flex items-center gap-2 mb-1.5">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#64ffda] shrink-0" />
+                                <span>{item.title}</span>
+                              </p>
+                              <p className="text-gray-300 text-[11px] leading-relaxed pl-3.5">
+                                {item.desc}
+                              </p>
+                            </div>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                )}
               </div>
 
               {/* Card Footer */}
