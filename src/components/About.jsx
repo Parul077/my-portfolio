@@ -4,9 +4,15 @@ import { Target, BookOpen, Rocket, CheckCircle2 } from "lucide-react";
 const quickFacts = [
   { label: "Education", value: "Computer Science Engineering" },
   { label: "Location", value: "India" },
-  { label: "Open To", value: "AI/ML • Software Engineering" },
+  { label: "Open To", value: "AI/ML • Data Science (Fresher Roles)" },
 ];
-const learningAreas = ["FastAPI"];
+
+const learningAreas = [
+  "ML Modeling & Hyperparameter Tuning",
+  "Synthetic Data Backtesting",
+  "Financial, Healthcare & Manufacturing ML",
+  "LLMs",
+];
 
 const About = () => {
   return (
@@ -44,7 +50,7 @@ const About = () => {
                 solve real-world problems using modern AI technologies.
               </p>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mt-4">
-                Currently, I'm building{" "}
+                Having built and launched{" "}
                 <a
                   href="https://joinglitchroom.com/"
                   target="_blank"
@@ -52,10 +58,10 @@ const About = () => {
                   className="text-[#64ffda] font-medium hover:underline"
                 >
                   Glitch Room
-                </a>{" "}
-                while working as a freelance Software Developer. I also write
+                </a>
+                , I work as a freelance Software Developer while writing
                 technical articles on AI and Machine Learning and continuously
-                explore emerging technologies through hands-on projects.
+                exploring emerging technologies through hands-on projects.
               </p>
             </div>
 
@@ -93,13 +99,18 @@ const About = () => {
             <div className="bg-[#112240]/60 border border-[#233554] rounded-xl p-5 transition-all duration-300 hover:border-[#64ffda]/30">
               <h3 className="text-[#64ffda] font-semibold text-base flex items-center gap-2">
                 <BookOpen size={18} />
-                <span>Currently Learning</span>
+                <span>Currently Learning & Building</span>
               </h3>
-              <div className="flex flex-wrap gap-2.5 mt-3">
+              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mt-2.5">
+                I am learning and building ML models, doing hyperparameter tuning,
+                and performing backtesting using synthetic datasets from scratch for
+                the financial, healthcare, and manufacturing sectors, as well as LLMs.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-3.5">
                 {learningAreas.map((item) => (
                   <span
                     key={item}
-                    className="inline-flex items-center gap-1.5 text-xs text-gray-200 bg-[#0a192f] border border-[#233554] px-3 py-1.5 rounded-lg"
+                    className="inline-flex items-center gap-1.5 text-xs text-gray-200 bg-[#0a192f] border border-[#233554] px-2.5 py-1 rounded-lg"
                   >
                     <CheckCircle2 size={13} className="text-[#64ffda]" />
                     {item}
@@ -115,8 +126,9 @@ const About = () => {
                 <span>Career Goal</span>
               </h3>
               <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mt-2">
-                Seeking opportunities to build production-grade AI applications
-                and scalable software that solve meaningful real-world problems.
+                Seeking entry-level / fresher roles in AI/ML and Data Science to
+                build production-grade intelligent applications and scalable
+                software that solve meaningful real-world problems.
               </p>
             </div>
           </motion.div>

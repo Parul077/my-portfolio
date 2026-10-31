@@ -26,7 +26,7 @@ const Hero = () => {
         >
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span className="text-[#64ffda] text-xs font-medium">
-            Open to AI/ML Full-Time Opportunities
+            Open to AI/ML & Data Science Roles (Fresher)
           </span>
         </motion.div>
 
