@@ -59,9 +59,9 @@ const About = () => {
                 >
                   Glitch Room
                 </a>
-                , I work as a freelance Software Developer while writing
-                technical articles on AI and Machine Learning and continuously
-                exploring emerging technologies through hands-on projects.
+                , I author technical articles on AI and Machine Learning and
+                continuously explore emerging technologies through hands-on
+                projects and research.
               </p>
             </div>
 

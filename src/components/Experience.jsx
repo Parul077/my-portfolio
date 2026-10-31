@@ -27,14 +27,11 @@ const experiences = [
     title: "Freelance Software Developer",
     company: "Self-Employed",
     description:
-      "Developing responsive and scalable web applications for clients, focusing on modern frontend development, backend architecture, authentication systems, and maintainable software solutions.",
+      "Developed responsive and scalable web applications for clients, focusing on modern frontend development, backend architecture, authentication systems, and maintainable software solutions.",
     points: [
-      "Develop responsive web interfaces using HTML5, CSS3, JavaScript (ES6+) and Tailwind CSS.",
-      "Build modular backend applications using Python and Flask Blueprint Architecture.",
-      "Implement user authentication and session management with Flask-Login.",
-      "Design relational databases and optimize data operations using SQLAlchemy and SQL.",
-      "Develop dynamic server-rendered interfaces using Jinja2 and Python Markdown.",
-      "Manage version control and collaborative workflows using Git and GitHub.",
+      "Built modular full-stack web applications using Python, Flask Blueprint architecture, and responsive user interfaces with Tailwind CSS and JavaScript.",
+      "Implemented secure user authentication and session management using Flask-Login and designed relational database schemas with SQLAlchemy.",
+      "Managed end-to-end development workflows, server-side templating (Jinja2), and version control via Git and GitHub.",
     ],
     tech: [
       "Python",
@@ -45,7 +42,6 @@ const experiences = [
       "Tailwind CSS",
       "SQLAlchemy",
       "SQL",
-      "Jinja2",
       "Git",
       "GitHub",
     ],
