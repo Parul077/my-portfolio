@@ -23,6 +23,22 @@ const experiences = [
     ],
   },
   {
+    year: "Jan 2026 – Present",
+    title: "Founder & Developer",
+    company: "Glitch Room",
+    link: "https://joinglitchroom.com/",
+    description:
+      "Led the design and development of an interactive learning platform focused on building practical technical skills through modern web technologies and scalable software engineering.",
+    points: [
+      "Designed and developed the platform architecture from the ground up.",
+      "Built responsive and intuitive user interfaces with modern frontend technologies.",
+      "Developed scalable backend systems and database architecture.",
+      "Implementing secure authentication and efficient data management.",
+      "Continuously improving performance, usability, and overall user experience.",
+    ],
+    tech: ["React", "Tailwind CSS", "Framer Motion", "Supabase", "JavaScript"],
+  },
+  {
     year: "July 2026 – Aug 2026",
     title: "Freelance Software Developer",
     company: "Self-Employed",
@@ -60,22 +76,6 @@ const experiences = [
       "Collaborated in a research-driven software development environment.",
     ],
     tech: ["Python", "Django", "MySQL", "Web Scraping"],
-  },
-  {
-    year: "Jan 2026 – Present",
-    title: "Founder & Developer",
-    company: "Glitch Room",
-    link: "https://joinglitchroom.com/",
-    description:
-      "Leading the design and development of an interactive learning platform focused on building practical technical skills through modern web technologies and scalable software engineering.",
-    points: [
-      "Designing and developing the platform architecture from the ground up.",
-      "Building responsive and intuitive user interfaces with modern frontend technologies.",
-      "Developing scalable backend systems and database architecture.",
-      "Implementing secure authentication and efficient data management.",
-      "Continuously improving performance, usability, and overall user experience.",
-    ],
-    tech: ["React", "Tailwind CSS", "Framer Motion", "Supabase", "JavaScript"],
   },
 ];
 
