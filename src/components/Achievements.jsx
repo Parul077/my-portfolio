@@ -25,10 +25,10 @@ const achievements = [
   },
   {
     icon: <BookOpen size={20} />,
-    title: "100+ Technical Blogs",
+    title: "154+ Technical Blogs",
     subtitle: "AI • ML • Deep Learning",
     description:
-      "Published 100+ educational blogs covering Artificial Intelligence, Machine Learning, and Deep Learning to simplify complex technical concepts.",
+      "Published 154+ educational blogs covering Artificial Intelligence, Machine Learning, and Deep Learning to simplify complex technical concepts.",
   },
   {
     icon: <Rocket size={20} />,

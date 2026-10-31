@@ -76,7 +76,7 @@ const Blogs = () => {
         <div className="w-16 h-[3px] rounded-full bg-[#64ffda] mt-4 mb-5"></div>
 
         <p className="text-[#64ffda] text-lg font-semibold">
-          100+ Technical Articles on AI, Machine Learning & Deep Learning
+          154+ Technical Articles on AI, Machine Learning & Deep Learning
         </p>
 
         <p className="mt-3 max-w-3xl text-gray-400 leading-relaxed">
