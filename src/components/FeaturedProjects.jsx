@@ -91,10 +91,15 @@ const JevEngineBanner = () => {
   );
 };
 
-// Custom Placeholder Component for Glitch Room / Coming Soon projects
-const GlitchRoomPlaceholder = () => {
+// Custom Banner Component for Glitch Room
+const GlitchRoomBanner = ({ liveUrl }) => {
   return (
-    <div className="relative w-full h-full bg-[#0a192f] overflow-hidden flex flex-col items-center justify-center border border-[#233554] rounded-lg group">
+    <a
+      href={liveUrl || "https://joinglitchroom.com/"}
+      target="_blank"
+      rel="noreferrer"
+      className="relative w-full h-full bg-[#0a192f] overflow-hidden flex flex-col items-center justify-center border border-[#233554] rounded-lg group block cursor-pointer"
+    >
       {/* Cyber Grid Background */}
       <div
         className="absolute inset-0 opacity-20"
@@ -106,7 +111,7 @@ const GlitchRoomPlaceholder = () => {
       />
 
       {/* Neon Glow */}
-      <div className="absolute w-32 h-32 bg-cyan-500/20 rounded-full blur-2xl group-hover:bg-cyan-500/30 transition-all duration-500" />
+      <div className="absolute w-32 h-32 bg-cyan-500/20 rounded-full blur-2xl group-hover:bg-cyan-500/35 transition-all duration-500" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-2.5">
@@ -122,14 +127,14 @@ const GlitchRoomPlaceholder = () => {
           GLITCH ROOM
         </h4>
 
-        <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#112240] border border-cyan-500/40 shadow-[0_0_10px_rgba(0,255,218,0.15)]">
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-          <span className="text-[10px] font-mono font-semibold tracking-widest text-cyan-300 uppercase">
-            Coming Soon
+        <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#112240] border border-emerald-500/40 shadow-[0_0_10px_rgba(16,185,129,0.15)]">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="text-[10px] font-mono font-semibold tracking-widest text-emerald-300 uppercase">
+            Live Platform
           </span>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 
@@ -191,7 +196,7 @@ const featuredProjects = [
   {
     number: "02",
     category: "INTERACTIVE LEARNING PLATFORM",
-    status: "Coming Soon",
+    status: "Live",
     title: "Glitch Room",
     subtitle: "Interactive Learning Platform for Developers",
     description:
@@ -204,8 +209,8 @@ const featuredProjects = [
     ],
     tech: ["React", "Tailwind CSS", "Framer Motion", "Supabase", "JavaScript"],
     github: null,
-    live: null,
-    image: null, // Renders GlitchRoomPlaceholder automatically
+    live: "https://joinglitchroom.com/",
+    isGlitchRoom: true,
   },
   {
     number: "03",
@@ -324,8 +329,10 @@ const FeaturedProjects = () => {
                 <div className="group overflow-hidden rounded-lg border border-[#233554] bg-[#0a192f] mb-4 h-48 w-full">
                   {project.isJevEngine ? (
                     <JevEngineBanner />
+                  ) : project.isGlitchRoom ? (
+                    <GlitchRoomBanner liveUrl={project.live} />
                   ) : project.status === "Coming Soon" ? (
-                    <GlitchRoomPlaceholder />
+                    <GlitchRoomBanner liveUrl={project.live} />
                   ) : (
                     <img
                       src={project.image}

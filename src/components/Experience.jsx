@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 
 const experiences = [
   {
@@ -67,10 +68,10 @@ const experiences = [
   {
     year: "Jan 2026 – Present",
     title: "Founder & Developer",
-    company: "Glitch Room (In Development)",
+    company: "Glitch Room",
+    link: "https://joinglitchroom.com/",
     description:
       "Leading the design and development of an interactive learning platform focused on building practical technical skills through modern web technologies and scalable software engineering.",
-
     points: [
       "Designing and developing the platform architecture from the ground up.",
       "Building responsive and intuitive user interfaces with modern frontend technologies.",
@@ -78,7 +79,6 @@ const experiences = [
       "Implementing secure authentication and efficient data management.",
       "Continuously improving performance, usability, and overall user experience.",
     ],
-
     tech: ["React", "Tailwind CSS", "Framer Motion", "Supabase", "JavaScript"],
   },
 ];
@@ -127,7 +127,21 @@ const Experience = () => {
                   {exp.title}
                 </h3>
 
-                <p className="text-[#64ffda] mt-1 mb-4">{exp.company}</p>
+                <p className="text-[#64ffda] mt-1 mb-4 flex items-center gap-2">
+                  {exp.link ? (
+                    <a
+                      href={exp.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:underline inline-flex items-center gap-1.5"
+                    >
+                      <span>{exp.company}</span>
+                      <ExternalLink size={14} />
+                    </a>
+                  ) : (
+                    exp.company
+                  )}
+                </p>
 
                 <p className="text-gray-400 leading-7 text-[15px]">
                   {exp.description}

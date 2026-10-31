@@ -45,7 +45,14 @@ const About = () => {
               </p>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mt-4">
                 Currently, I'm building{" "}
-                <span className="text-[#64ffda] font-medium">Glitch Room</span>{" "}
+                <a
+                  href="https://joinglitchroom.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[#64ffda] font-medium hover:underline"
+                >
+                  Glitch Room
+                </a>{" "}
                 while working as a freelance Software Developer. I also write
                 technical articles on AI and Machine Learning and continuously
                 explore emerging technologies through hands-on projects.
