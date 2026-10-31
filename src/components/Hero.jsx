@@ -26,7 +26,7 @@ const Hero = () => {
         >
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span className="text-[#64ffda] text-xs font-medium">
-            Open to AI/ML & Data Science Roles (Fresher)
+            Open to AI/ML, Data Engineering & Data Science Roles
           </span>
         </motion.div>
 
@@ -57,7 +57,7 @@ const Hero = () => {
           transition={{ delay: 0.25 }}
           className="text-lg sm:text-2xl md:text-3xl font-semibold text-gray-400 mt-2 leading-snug"
         >
-          AI Engineer • Machine Learning Engineer • Python Developer
+          AI/ML Engineer • Data Engineer • Python Developer
         </motion.h2>
 
         {/* Description Body */}
@@ -67,11 +67,11 @@ const Hero = () => {
           transition={{ delay: 0.3 }}
           className="text-gray-300 mt-4 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed"
         >
-          I build intelligent AI applications, Retrieval-Augmented Generation
-          (RAG) systems, machine learning solutions, and scalable Python
-          backends that solve real-world problems. Passionate about designing
-          production-ready AI products with clean architecture and intuitive
-          user experiences.
+          Computer Science graduate and AI/ML Intern with hands-on experience
+          building Python applications, data-processing and synthetic-data
+          pipelines, Django automation systems, and LLM/RAG solutions. Skilled
+          in data validation, statistical checks, semantic retrieval, and
+          multi-step AI agent runtimes.
         </motion.p>
 
         {/* CTA Buttons */}

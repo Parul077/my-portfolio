@@ -91,6 +91,80 @@ const JevEngineBanner = () => {
   );
 };
 
+// Custom Banner Component for Synthetic Data Generator
+const SyntheticDataBanner = () => {
+  return (
+    <div className="relative w-full h-full bg-[#081a2e] overflow-hidden flex flex-col justify-between p-4 border border-[#233554] rounded-lg group select-none">
+      {/* Background Matrix/Grid */}
+      <div
+        className="absolute inset-0 opacity-15 pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(#64ffda 1px, transparent 1px), linear-gradient(90deg, #64ffda 1px, transparent 1px)`,
+          backgroundSize: `20px 20px`,
+        }}
+      />
+      <div className="absolute top-0 right-0 w-36 h-36 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all duration-500" />
+      <div className="absolute bottom-0 left-0 w-36 h-36 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500" />
+
+      {/* Terminal Title Bar */}
+      <div className="relative z-10 flex items-center justify-between border-b border-[#233554]/80 pb-2">
+        <div className="flex items-center gap-1.5">
+          <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
+          <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
+          <span className="text-[11px] font-mono text-gray-400 ml-2">
+            synthetic-data // pipeline.py
+          </span>
+        </div>
+        <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 px-2 py-0.5 rounded-full">
+          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+          Bounded Repair
+        </span>
+      </div>
+
+      {/* Pipeline Stages Flow */}
+      <div className="relative z-10 my-auto py-2">
+        <div className="text-[10px] font-mono text-[#64ffda] uppercase tracking-wider mb-2 flex items-center justify-between">
+          <span>Excel Spec to Multi-Format Pipeline</span>
+          <span className="text-gray-400 font-mono text-[9px]">Claude API • Pytest</span>
+        </div>
+
+        <div className="grid grid-cols-4 gap-1.5 text-center font-mono">
+          {[
+            { label: "Spec Parser", sub: "Excel / Rules" },
+            { label: "Dist. Checks", sub: "Stat Validation" },
+            { label: "Repair Engine", sub: "Bounded Fixes" },
+            { label: "Multi-Export", sub: "CSV, JSON, PDF" },
+          ].map((stage) => (
+            <div
+              key={stage.label}
+              className="bg-[#0f2342] border border-[#233554] group-hover:border-[#64ffda]/40 rounded px-1 py-1.5 transition-all duration-300"
+            >
+              <span className="block text-[10px] font-bold text-gray-200 group-hover:text-[#64ffda] truncate">
+                {stage.label}
+              </span>
+              <span className="block text-[8px] text-gray-400 uppercase tracking-tight truncate">
+                {stage.sub}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Telemetry Bar */}
+      <div className="relative z-10 flex items-center justify-between pt-2 border-t border-[#233554]/80 text-[10px] font-mono">
+        <div className="flex items-center gap-2 text-gray-300">
+          <span className="text-[#64ffda]">&gt;</span>
+          <span>60+ Pytest Suite • Mock Offline Mode</span>
+        </div>
+        <span className="text-emerald-400 font-semibold bg-[#112240] px-2 py-0.5 rounded border border-emerald-500/30">
+          Zero Leakage
+        </span>
+      </div>
+    </div>
+  );
+};
+
 // Custom Banner Component for Glitch Room
 const GlitchRoomBanner = ({ liveUrl }) => {
   return (
@@ -146,44 +220,32 @@ const featuredProjects = [
     title: "Jev State Engine",
     subtitle: "Deterministic Gated Autonomous Coding Runtime",
     description:
-      "An Inversion-of-Control (IoC) finite-state machine (LangGraph) orchestrating untrusted worker LLMs across a 5-stage deterministic lifecycle (Investigate, Plan, Implement, Gate, Verify) with mechanical two-tier gating, atomic Git worktree isolation, and local offline post-mortem diagnostics.",
+      "A deterministic state-machine runtime for autonomous coding tasks, using mechanical AST/pytest checks and an LLM semantic gate to control untrusted code-generation agents.",
     highlights: [
-      "5-Stage IoC FSM (LangGraph)",
-      "Two-Tier Gating (AST + Semantic ≥0.50)",
-      "Atomic Worktrees (1-File Blast Radius)",
-      "Local Ollama CoT Post-Mortem",
+      "Deterministic State-Machine Runtime",
+      "Mechanical AST & Pytest Gate",
+      "Git Worktree Isolation & 3-Strike Breaker",
+      "100% Test Integrity (~4x Efficiency)",
     ],
     detailedPoints: [
       {
-        title: "Architected Deterministic AI Coding Agent",
-        desc: "Engineered an Inversion-of-Control (IoC) finite-state machine (LangGraph) orchestrating untrusted worker LLMs across a 5-stage lifecycle (Investigate, Plan, Implement, Gate, Verify).",
+        title: "Deterministic State-Machine Runtime",
+        desc: "Built a deterministic state-machine runtime for autonomous coding tasks, using mechanical AST/pytest checks and an LLM semantic gate to control untrusted code-generation agents.",
       },
       {
-        title: "Two-Tier Authoritative Gating",
-        desc: "Built a mechanical AST and test compilation gate (Tier 0) that eliminates broken syntax at 0 LLM token cost, paired with a calibrated semantic evaluation gate (Tier 1) requiring ≥0.50 acceptance probability before code commits.",
+        title: "Worktree Isolation & Circuit Breaker",
+        desc: "Isolated code changes in Git worktrees and added a 3-strike circuit breaker with forensic post-mortems using a local Qwen 1.5B advisor.",
       },
       {
-        title: "Blast Radius & Worktree Isolation",
-        desc: "Enforced atomic Git worktree isolation with rollback mechanisms, guaranteeing zero dirty state bleed and confining code mutations strictly to a 1-file blast radius.",
-      },
-      {
-        title: "Local Offline Post-Mortem Advisor",
-        desc: "Integrated local Ollama (qwen2.5-coder:1.5b) with active subgoal context injection to generate forensic Chain-of-Thought (CoT) root-cause diagnoses on gate strikes without data egress.",
-      },
-      {
-        title: "Empirical Multi-Repo Validation",
-        desc: "Evaluated across 17 recorded runs on industry repositories (sqlparse, python-humanize), achieving 100% first-pass completion on sqlparse (509 passing tests, 0 regressions) with ~9.7k total tokens—a ~4x token efficiency gain over unconstrained ReAct loops (~38k tokens).",
-      },
-      {
-        title: "Telemetry & Ledger Persistence",
-        desc: "Designed an immutable SQLite telemetry engine logging tokens, diff SHAs, gate verdicts, and export pipelines for model fine-tuning datasets (.jsonl).",
+        title: "Empirical Multi-Repo Benchmarking",
+        desc: "Benchmarked 17 runs on sqlparse and humanize; tasks completed in one subgoal at ~9.5k tokens, with 100% test integrity and ~75% lower token overhead versus standard ReAct agents.",
       },
     ],
     tech: [
       "Python",
       "LangGraph",
       "Git Worktrees",
-      "AST Analysis",
+      "AST",
       "SQLite",
       "Ollama (Qwen 2.5 Coder)",
       "Gemini API",
@@ -195,25 +257,145 @@ const featuredProjects = [
   },
   {
     number: "02",
+    category: "SYNTHETIC DATA PIPELINE",
+    status: "Completed",
+    title: "Synthetic Data Generator",
+    subtitle: "Specification-Driven Data Synthesis & Validation",
+    description:
+      "A robust specification-driven workflow that converts Excel specifications into synthetic datasets and exports CSV, XLSX, JSON, DOCX, and PDF deliverables with automated validation.",
+    highlights: [
+      "Excel Spec to Multi-Format Export",
+      "Ranges, Distributions & Correlation Checks",
+      "Bounded Repair & 60+ Test Suite",
+      "Offline Mock Mode & Safe Formula Eval",
+    ],
+    detailedPoints: [
+      {
+        title: "Specification-Driven Synthesis",
+        desc: "Built a workflow that converts Excel specifications into synthetic datasets and exports CSV, XLSX, JSON, DOCX, and PDF deliverables.",
+      },
+      {
+        title: "Statistical Validation & Bounded Repair",
+        desc: "Added checks for row counts, unique IDs, ranges, distributions, and correlations, with bounded repair and a 60+ test suite.",
+      },
+      {
+        title: "Offline Mock Mode & Formula Evaluation",
+        desc: "Included offline mock mode and safe formula evaluation to support repeatable generation and testing without a live API dependency.",
+      },
+    ],
+    tech: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "SciPy",
+      "Streamlit",
+      "Claude API",
+      "Pytest",
+    ],
+    github: "https://github.com/Parul077/synthetic-data-generator",
+    live: null,
+    isSyntheticData: true,
+  },
+  {
+    number: "03",
     category: "INTERACTIVE LEARNING PLATFORM",
     status: "Live",
-    title: "Glitch Room",
-    subtitle: "Interactive Learning Platform for Developers",
+    title: "The Glitch Room",
+    subtitle: "Gamified Developer Learning Platform",
     description:
-      "Glitch Room is an interactive platform designed to make technical learning engaging through hands-on coding experiences and intelligent learning workflows.",
+      "A gamified learning platform with AI-generated challenges, automated feedback, interactive dashboards, leaderboards, and collaborative Creator Rooms.",
     highlights: [
-      "Interactive Learning",
-      "Real-world Challenges",
-      "Progress Tracking",
-      "Modern Responsive UI",
+      "Gamified Learning Platform",
+      "AI-Generated Challenges & Feedback",
+      "Creator Rooms & Leaderboards",
+      "AI-Assisted Progress Workflows",
     ],
-    tech: ["React", "Tailwind CSS", "Framer Motion", "Supabase", "JavaScript"],
+    detailedPoints: [
+      {
+        title: "Gamified Challenge Engine",
+        desc: "Developed a gamified learning platform with AI-generated challenges and automated feedback.",
+      },
+      {
+        title: "Interactive Dashboards & Creator Rooms",
+        desc: "Built interactive dashboards, leaderboards, and collaborative Creator Rooms using React and Supabase.",
+      },
+      {
+        title: "AI-Assisted Evaluation Workflows",
+        desc: "Added AI-assisted evaluation and progress workflows to support hands-on practice and learning consistency.",
+      },
+    ],
+    tech: ["React", "Tailwind CSS", "Framer Motion", "Supabase", "Generative AI"],
     github: null,
     live: "https://joinglitchroom.com/",
     isGlitchRoom: true,
   },
   {
-    number: "03",
+    number: "04",
+    category: "RAG APPLICATION",
+    status: "Completed",
+    title: "QueryPDF",
+    subtitle: "AI-Powered Document Assistant using Vector Search",
+    description:
+      "A document assistant supporting natural-language questions about PDF content using semantic vector retrieval and context-aware LLM answers.",
+    highlights: [
+      "Natural Language PDF QA",
+      "Semantic Retrieval & Embeddings",
+      "Vector Search Passage Matching",
+      "Context-Aware LLM Answering",
+    ],
+    detailedPoints: [
+      {
+        title: "Document Assistant Architecture",
+        desc: "Built a document assistant supporting natural-language questions about PDF content.",
+      },
+      {
+        title: "Semantic Vector Retrieval",
+        desc: "Implemented semantic retrieval using embeddings and vector search to find relevant document passages.",
+      },
+      {
+        title: "Context-Aware LLM Integration",
+        desc: "Integrated an LLM with retrieved context to generate context-aware answers.",
+      },
+    ],
+    tech: ["Python", "LLMs", "Embeddings", "Vector Search", "LangChain", "FAISS"],
+    github:
+      "https://github.com/Parul077/QueryPDF-AI-Powered-Document-Assistant",
+    image: queryPdfImg,
+  },
+  {
+    number: "05",
+    category: "COMPUTER VISION",
+    status: "Completed",
+    title: "Solar Panel Defect Classification",
+    subtitle: "EfficientNet Deep-Learning Defect Classifier",
+    description:
+      "An EfficientNet-based deep-learning model to classify solar-panel images across six defect categories with preprocessing, augmentation, and Streamlit inference.",
+    highlights: [
+      "EfficientNet Deep-Learning Model",
+      "6 Defect Categories Classification",
+      "Image Preprocessing & Augmentation",
+      "Automated Streamlit Prediction UI",
+    ],
+    detailedPoints: [
+      {
+        title: "EfficientNet Model Architecture",
+        desc: "Developed an EfficientNet-based deep-learning model to classify solar-panel images across six defect categories.",
+      },
+      {
+        title: "Data Preparation & Augmentation",
+        desc: "Applied image preprocessing and augmentation to prepare image inputs and support model training.",
+      },
+      {
+        title: "Streamlit Interface & Inference",
+        desc: "Built a Streamlit interface for image upload and automated defect prediction.",
+      },
+    ],
+    tech: ["Python", "TensorFlow", "EfficientNet", "Streamlit", "Computer Vision"],
+    github: "https://github.com/Parul077/Solar_panel_defect_classifier",
+    image: solarImg,
+  },
+  {
+    number: "06",
     category: "RAG APPLICATION",
     status: "Live",
     title: "AI Career Coach",
@@ -230,43 +412,6 @@ const featuredProjects = [
     github: "https://github.com/Parul077/AI-Career-Coach",
     live: "https://ai-career-coach-1-5e5m.onrender.com/",
     image: aiCoachImg,
-  },
-  {
-    number: "04",
-    category: "RAG APPLICATION",
-    status: "Completed",
-    title: "QueryPDF",
-    subtitle: "AI Document Assistant using Retrieval-Augmented Generation",
-    description:
-      "An AI document assistant that enables users to upload PDFs and ask natural language questions using semantic search and context-aware LLM answers.",
-    highlights: [
-      "PDF Upload",
-      "Semantic Search",
-      "Document Retrieval",
-      "Vector Embeddings",
-    ],
-    tech: ["Python", "Flask", "LangChain", "FAISS", "Embeddings"],
-    github:
-      "https://github.com/Parul077/QueryPDF-AI-Powered-Document-Assistant",
-    image: queryPdfImg,
-  },
-  {
-    number: "05",
-    category: "COMPUTER VISION",
-    status: "Completed",
-    title: "Solar Panel Defect Classification",
-    subtitle: "CNN-based Computer Vision System",
-    description:
-      "A deep learning application that automatically detects and classifies solar panel defects using Convolutional Neural Networks and Streamlit.",
-    highlights: [
-      "CNN Model",
-      "Image Classification",
-      "Real-time Prediction",
-      "Streamlit Dashboard",
-    ],
-    tech: ["TensorFlow", "CNN", "Streamlit", "Computer Vision"],
-    github: "https://github.com/Parul077/Solar_panel_defect_classifier",
-    image: solarImg,
   },
 ];
 
@@ -325,10 +470,12 @@ const FeaturedProjects = () => {
             >
               {/* Card Main Body */}
               <div>
-                {/* Banner: Image, JevEngineBanner or Custom Placeholder */}
+                {/* Banner: Image, JevEngineBanner, SyntheticDataBanner or GlitchRoomBanner */}
                 <div className="group overflow-hidden rounded-lg border border-[#233554] bg-[#0a192f] mb-4 h-48 w-full">
                   {project.isJevEngine ? (
                     <JevEngineBanner />
+                  ) : project.isSyntheticData ? (
+                    <SyntheticDataBanner />
                   ) : project.isGlitchRoom ? (
                     <GlitchRoomBanner liveUrl={project.live} />
                   ) : project.status === "Coming Soon" ? (
@@ -406,8 +553,8 @@ const FeaturedProjects = () => {
                         <Cpu size={14} className="text-[#64ffda]" />
                         <span>
                           {expandedProjects[project.title]
-                            ? "Hide Architecture & Benchmarks"
-                            : "View Architecture & Multi-Repo Benchmarks (6 Pillars)"}
+                            ? "Hide Key Details & Architecture"
+                            : "View Key Details & Technical Breakdown"}
                         </span>
                       </span>
                       {expandedProjects[project.title] ? (

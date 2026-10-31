@@ -11,10 +11,24 @@ import {
 const achievements = [
   {
     icon: <GraduationCap size={20} />,
-    title: "SURGE Research Internship",
-    subtitle: "Indian Institute of Technology Kanpur",
+    title: "SURGE Research Program",
+    subtitle: "IIT Kanpur · Institute-Funded Stipend Recipient",
     description:
-      "Selected for the prestigious SURGE Research Internship at IIT Kanpur, where I contributed to the development of the ERC Tracker project.",
+      "Selected for IIT Kanpur's prestigious SURGE Program 2024; awarded the competitive Institute-Funded Category (stipend recipient) for automated document scraping and tracking systems.",
+  },
+  {
+    icon: <Rocket size={20} />,
+    title: "Unstop Playstorm & PitchFest",
+    subtitle: "Presented The Glitch Room • Round 1 Selection",
+    description:
+      "Presented The Glitch Room at Unstop Playstorm and Buddha Startup PitchFest 1.0; selected for Round 1 of Unstop Playstorm for product vision and gamified learning architecture.",
+  },
+  {
+    icon: <BookOpen size={20} />,
+    title: "154+ Technical Blogs",
+    subtitle: "AI • ML • Deep Learning • NLP",
+    description:
+      "Published 154+ educational blogs covering Artificial Intelligence, Machine Learning, Deep Learning, and NLP on Medium to simplify complex engineering concepts.",
   },
   {
     icon: <Cloud size={20} />,
@@ -24,32 +38,18 @@ const achievements = [
       "Successfully completed Google Cloud Arcade challenges and achieved the Novice Milestone while gaining hands-on cloud experience.",
   },
   {
-    icon: <BookOpen size={20} />,
-    title: "154+ Technical Blogs",
-    subtitle: "AI • ML • Deep Learning",
-    description:
-      "Published 154+ educational blogs covering Artificial Intelligence, Machine Learning, and Deep Learning to simplify complex technical concepts.",
-  },
-  {
-    icon: <Rocket size={20} />,
-    title: "Startup PitchFest 1.0",
-    subtitle: "Presented The Glitch Room • June 2026",
-    description:
-      "Presented The Glitch Room at Buddha Startup PitchFest 1.0, sharing the product vision and receiving exposure to the startup ecosystem, entrepreneurship, and innovation.",
-  },
-  {
     icon: <Lightbulb size={20} />,
-    title: "Unstop Playstorm",
-    subtitle: "Innovation & Product Challenge",
+    title: "Innovation & Product Challenges",
+    subtitle: "Competitive Problem Solving",
     description:
-      "Participated in Unstop Playstorm, presenting an innovative product concept while strengthening problem-solving, product thinking, and presentation skills.",
+      "Regularly participate in technical and product hackathons, building prototypes and refining problem-solving and systems architecture skills.",
   },
   {
     icon: <Medal size={20} />,
     title: "Academic Excellence",
-    subtitle: "CGPA 8.62 / 10",
+    subtitle: "CPI: 8.62 / 10 • CS Engineering",
     description:
-      "Maintained a strong academic record with a CGPA of 8.62/10 throughout the Computer Science Engineering program.",
+      "Maintained a strong academic record with a CPI of 8.62/10 throughout the B.Tech Computer Science and Engineering program (2021–2025).",
   },
 ];
 

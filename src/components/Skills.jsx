@@ -3,82 +3,108 @@ import {
   Code2,
   BrainCircuit,
   Library,
-  Server,
   Database,
   Wrench,
+  CheckCircle2,
+  BarChart3,
   Bot,
 } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Languages",
+    title: "Programming",
     icon: <Code2 size={22} />,
-    skills: ["Python", "JavaScript", "SQL", "HTML5", "CSS3"],
+    skills: [
+      "Python",
+      "SQL",
+      "JavaScript",
+      "Object-Oriented Programming (OOP)",
+    ],
   },
   {
     title: "AI & Machine Learning",
     icon: <BrainCircuit size={22} />,
     skills: [
-      "Autonomous AI Agents",
-      "Retrieval-Augmented Generation (RAG)",
-      "LLM Application Development",
       "Machine Learning",
       "Deep Learning",
-      "NLP",
+      "Natural Language Processing (NLP)",
+      "Large Language Models (LLMs)",
+      "Generative AI",
+      "Retrieval-Augmented Generation (RAG)",
       "Computer Vision",
-      "Prompt Engineering",
-      "Feature Engineering",
+      "Autonomous AI Agents",
     ],
   },
   {
-    title: "Libraries & Runtimes",
+    title: "Frameworks & Libraries",
     icon: <Library size={22} />,
     skills: [
       "LangGraph",
       "LangChain",
+      "TensorFlow",
+      "Keras",
       "Scikit-learn",
-      "TensorFlow / Keras",
-      "Pandas",
-      "NumPy",
-      "Matplotlib",
-      "Seaborn",
-      "NLTK",
+      "FAISS",
+      "Django",
+      "Flask",
+      "Streamlit",
     ],
   },
   {
-    title: "Frameworks",
-    icon: <Server size={22} />,
-    skills: ["Flask", "Django", "Streamlit", "Jinja2"],
-  },
-  {
-    title: "Databases & Storage",
-    icon: <Database size={22} />,
-    skills: ["MySQL", "SQLite", "FAISS (Vector Database)", "Supabase"],
-  },
-  {
-    title: "Tools & Testing",
-    icon: <Wrench size={22} />,
+    title: "Data & Analytics",
+    icon: <BarChart3 size={22} />,
     skills: [
+      "Pandas",
+      "NumPy",
+      "SciPy",
+      "Matplotlib",
+      "NLTK",
+      "Synthetic Data Generation",
+      "Statistical Validation",
+      "Feature Engineering",
+      "Model Evaluation",
+    ],
+  },
+  {
+    title: "Testing & Data Quality",
+    icon: <CheckCircle2 size={22} />,
+    skills: [
+      "Pytest",
+      "Automated Validation",
+      "Data Integrity Checks",
+      "Range/Distribution/Correlation Checks",
+      "Bounded Repair",
+      "AST Analysis",
+    ],
+  },
+  {
+    title: "Web, Cloud & Databases",
+    icon: <Database size={22} />,
+    skills: [
+      "React",
+      "Tailwind CSS",
+      "MySQL",
+      "SQLite",
+      "Supabase / PostgreSQL",
       "Docker",
       "Git & Git Worktrees",
       "GitHub",
-      "Pytest",
-      "AST Analysis",
-      "Render",
       "Vercel",
-      "Web Scraping & Automation",
+      "Netlify",
+      "Render",
     ],
   },
   {
-    title: "AI Platforms & APIs",
+    title: "AI APIs & Platforms",
     icon: <Bot size={22} />,
     skills: [
-      "Ollama",
+      "Claude API",
       "Gemini API",
+      "Ollama",
       "Google AI Studio",
       "Groq",
-      "OpenRouter",
       "Hugging Face",
+      "OpenRouter",
     ],
   },
 ];
@@ -124,7 +150,7 @@ const Skills = () => {
 
               {/* Skills */}
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2.5">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}

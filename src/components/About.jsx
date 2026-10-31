@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Target, BookOpen, Rocket, CheckCircle2 } from "lucide-react";
 
 const quickFacts = [
-  { label: "Education", value: "Computer Science Engineering" },
+  { label: "Education", value: "B.Tech CSE (CPI: 8.62 / 10)" },
   { label: "Location", value: "India" },
-  { label: "Open To", value: "AI/ML • Data Science (Fresher Roles)" },
+  { label: "Open To", value: "AI/ML • Data Eng • Data Science" },
 ];
 
 const learningAreas = [
@@ -45,10 +45,11 @@ const About = () => {
                 Hi, I'm Parul Singh.
               </h3>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                Computer Science graduate passionate about Artificial
-                Intelligence, Machine Learning, Deep Learning, and backend
-                engineering. I enjoy building intelligent applications that
-                solve real-world problems using modern AI technologies.
+                Computer Science graduate and AI/ML Intern with hands-on experience
+                building Python applications, data-processing and synthetic-data
+                pipelines, Django automation systems, and LLM/RAG solutions. Skilled
+                in data validation, statistical checks, semantic retrieval, model
+                workflows, and debugging multi-step AI-agent trajectories.
               </p>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mt-4">
                 Having built and launched{" "}
@@ -58,11 +59,11 @@ const About = () => {
                   rel="noreferrer"
                   className="text-[#64ffda] font-medium hover:underline"
                 >
-                  Glitch Room
+                  The Glitch Room
                 </a>
                 , I author technical articles on AI and Machine Learning and
                 continuously explore emerging technologies through hands-on
-                projects and research.
+                projects, agentic runtime architecture, and data pipelines.
               </p>
             </div>
 
@@ -129,9 +130,9 @@ const About = () => {
                 <span>Career Goal</span>
               </h3>
               <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mt-2">
-                Seeking entry-level / fresher roles in AI/ML and Data Science to
-                build production-grade intelligent applications and scalable
-                software that solve meaningful real-world problems.
+                Seeking Python Developer, AI/ML Engineer, Data Engineer, or Data
+                Science opportunities that value analytical problem-solving and
+                reliable, production-grade implementation.
               </p>
             </div>
           </motion.div>
