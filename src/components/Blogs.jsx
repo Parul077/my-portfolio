@@ -2,55 +2,71 @@ import { motion } from "framer-motion";
 
 const blogs = [
   {
-    title: "Deep Learning for Time Series: Understanding Temporal Patterns",
-    desc: "Deep Learning for Time Series uses neural networks to capture complex temporal patterns, dependencies, and trends in sequential data, enabling accurate forecasting and prediction.",
-    date: "2026-09-06",
-    link: "https://medium.com/@parulsingh1074/deep-learning-for-time-series-understanding-temporal-patterns-61dbb6a33f09",
+    title: "Neural Language Models: Learning Language with Neural Networks",
+    desc: "Explores how feedforward and recurrent neural architectures model complex linguistic structures, resolve n-gram sparsity, and learn distributed representations.",
+    date: "2026-10-28",
+    link: "https://medium.com/@parulsingh1074",
+  },
+  {
+    title: "N-Gram Language Models: How Machines Predict the Next Word",
+    desc: "Deep dive into statistical language modeling with n-grams, Markov chains, perplexity metrics, and essential smoothing techniques like Laplace and Kneser-Ney.",
+    date: "2026-10-23",
+    link: "https://medium.com/@parulsingh1074",
+  },
+  {
+    title: "GloVe and FastText: Beyond Basic Word Embeddings",
+    desc: "Examines global co-occurrence matrix factorization in GloVe and subword character n-gram representations in FastText to effectively handle out-of-vocabulary terms.",
+    date: "2026-10-17",
+    link: "https://medium.com/@parulsingh1074",
+  },
+  {
+    title: "Word2Vec: Learning Word Meaning from Context",
+    desc: "Breaks down Continuous Bag of Words (CBOW) and Skip-Gram neural architectures, negative sampling optimization, and semantic vector geometry.",
+    date: "2026-10-13",
+    link: "https://medium.com/@parulsingh1074",
+  },
+  {
+    title: "Word Embeddings: Teaching Machines the Meaning of Words",
+    desc: "A foundational introduction to dense vector representations, geometric word spaces, and how continuous embeddings power modern NLP pipelines.",
+    date: "2026-10-11",
+    link: "https://medium.com/@parulsingh1074",
+  },
+  {
+    title: "TF-IDF: Finding Important Words in Documents",
+    desc: "Analyzes Term Frequency-Inverse Document Frequency formulation, penalizing frequent stopwords while isolating discriminative keywords across documents.",
+    date: "2026-10-06",
+    link: "https://medium.com/@parulsingh1074",
+  },
+  {
+    title: "Bag of Words: Representing Text as Numbers",
+    desc: "Covers classic text vectorization using Bag-of-Words, count matrices, vocabulary indexing, and the trade-offs of ignoring word sequence order.",
+    date: "2026-10-05",
+    link: "https://medium.com/@parulsingh1074",
+  },
+  {
+    title: "Tokenization: How Text Becomes Machine-Readable",
+    desc: "Explores text segmentation algorithms from whitespace and regex tokenizers to statistical subword tokenizers like Byte-Pair Encoding (BPE) and WordPiece.",
+    date: "2026-10-01",
+    link: "https://medium.com/@parulsingh1074",
+  },
+  {
+    title: "Text Preprocessing: Cleaning and Preparing Human Language for Machines",
+    desc: "Practical walkthrough of standard NLP cleaning steps including lowercasing, punctuation stripping, stopword filtering, stemming, and lemmatization.",
+    date: "2026-10-01",
+    link: "https://medium.com/@parulsingh1074",
   },
   {
     title:
-      "Transfer Learning: Teaching New Tasks with Pretrained Neural Networks",
-    desc: "Transfer Learning reuses knowledge from pretrained neural networks and adapts it to new tasks, reducing training time, data requirements, and computational cost while improving performance.",
-    date: "2026-09-06",
-    link: "https://medium.com/@parulsingh1074/transfer-learning-teaching-new-tasks-with-pretrained-neural-networks-36d4435e4564",
+      "Introduction to Natural Language Processing: How Machines Understand Human Language",
+    desc: "Comprehensive overview of NLP foundations, syntax vs. semantics, ambiguity challenges, and the evolution toward modern language models.",
+    date: "2026-09-27",
+    link: "https://medium.com/@parulsingh1074",
   },
   {
-    title:
-      "Cross-Validation Techniques: Building Reliable Machine Learning Models",
-    desc: "Explains different cross-validation methods like K-Fold and Stratified K-Fold to build reliable and generalizable machine learning models.",
-    date: "2026-03-25",
-    link: "https://medium.com/@parulsingh1074/cross-validation-techniques-building-reliable-machine-learning-models-933b9ce68cc7",
-  },
-  {
-    title:
-      "Stacking & Blending: Combining Multiple Models for Maximum Performance",
-    desc: "Breaks down advanced ensemble techniques like stacking and blending to combine multiple models and boost predictive performance.",
-    date: "2026-03-23",
-    link: "https://medium.com/@parulsingh1074/stacking-blending-combining-multiple-models-for-maximum-performance-4c5fc0b655e7",
-  },
-  {
-    title: "Advanced Boosting Algorithms: XGBoost, LightGBM & CatBoost",
-    desc: "Compares powerful boosting algorithms like XGBoost, LightGBM, and CatBoost, explaining their working, advantages, and real-world usage.",
-    date: "2026-03-20",
-    link: "https://medium.com/@parulsingh1074/advanced-boosting-algorithms-xgboost-lightgbm-catboost-d8d207138918",
-  },
-  {
-    title: "Gradient Boosting: Learning from Residual Errors",
-    desc: "Explains how gradient boosting improves model performance by learning from residual errors step-by-step.",
-    date: "2026-03-18",
-    link: "https://medium.com/@parulsingh1074/gradient-boosting-learning-from-residual-errors-bb35e93df219",
-  },
-  {
-    title: "Dimensionality Reduction with PCA",
-    desc: "Explains how PCA reduces dimensionality while preserving important features to improve model efficiency.",
-    date: "2026-03-15",
-    link: "https://medium.com/@parulsingh1074/dimensionality-reduction-with-principal-component-analysis-pca-6f14cd8c7af5",
-  },
-  {
-    title: "Random Forests: Power of Ensemble Learning",
-    desc: "Explores how Random Forest combines multiple decision trees to improve accuracy and reduce overfitting.",
-    date: "2026-02-28",
-    link: "https://medium.com/@parulsingh1074/random-forests-power-of-ensemble-learning-db5f92625255",
+    title: "The Future of Deep Learning: Where Neural Networks Are Heading",
+    desc: "Examines evolving deep learning frontiers including foundation models, self-supervised learning, neuro-symbolic systems, and efficient reasoning.",
+    date: "2026-09-19",
+    link: "https://medium.com/@parulsingh1074",
   },
 ];
 
@@ -98,13 +114,15 @@ const Blogs = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-[#112240] p-6 rounded-lg hover:-translate-y-2 hover:shadow-[0_0_25px_#64ffda30] transition duration-300"
+            className="bg-[#112240] p-6 rounded-lg hover:-translate-y-2 hover:shadow-[0_0_25px_#64ffda30] transition duration-300 flex flex-col justify-between"
           >
-            <p className="text-xs text-[#64ffda] mb-2">{blog.date}</p>
+            <div>
+              <p className="text-xs text-[#64ffda] mb-2">{blog.date}</p>
 
-            <h3 className="text-xl font-semibold text-white">{blog.title}</h3>
+              <h3 className="text-xl font-semibold text-white">{blog.title}</h3>
 
-            <p className="text-sm text-gray-400 mt-2">{blog.desc}</p>
+              <p className="text-sm text-gray-400 mt-2">{blog.desc}</p>
+            </div>
 
             <a
               href={blog.link}
@@ -128,11 +146,17 @@ const Blogs = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-[#112240] p-5 rounded-lg hover:-translate-y-2 transition duration-300"
+            className="bg-[#112240] p-5 rounded-lg hover:-translate-y-2 transition duration-300 flex flex-col justify-between"
           >
-            <h4 className="text-white font-medium">{blog.title}</h4>
+            <div>
+              <h4 className="text-white font-medium">{blog.title}</h4>
 
-            <p className="text-xs text-gray-500 mt-2">{blog.date}</p>
+              <p className="text-xs text-gray-500 mt-2">{blog.date}</p>
+
+              <p className="text-xs text-gray-400 mt-2 line-clamp-2">
+                {blog.desc}
+              </p>
+            </div>
 
             <a
               href={blog.link}
@@ -152,9 +176,9 @@ const Blogs = () => {
           href="https://medium.com/@parulsingh1074"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#64ffda] text-[#0a192f] px-6 py-3 rounded hover:opacity-90 transition"
+          className="bg-[#64ffda] text-[#0a192f] px-6 py-3 rounded hover:opacity-90 transition font-medium text-sm"
         >
-          Visit my Medium →
+          Visit my Medium (154+ Articles) →
         </a>
       </div>
     </section>

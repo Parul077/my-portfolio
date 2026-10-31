@@ -45,10 +45,10 @@ const Contact = () => {
           viewport={{ once: true }}
           className="max-w-2xl mx-auto text-gray-400 leading-8"
         >
-          I'm currently seeking opportunities in Artificial Intelligence,
-          Machine Learning, and Software Development. Whether it's an
-          internship, full-time role, freelance project, or simply a
-          conversation about technology, I'd be happy to connect.
+          I'm currently seeking entry-level / fresher opportunities in
+          Artificial Intelligence, Machine Learning, and Data Science. Whether
+          it's a full-time role, internship, or simply a conversation about
+          technology, I'd be happy to connect.
         </motion.p>
 
         {/* Contact Cards */}
@@ -90,7 +90,7 @@ const Contact = () => {
           className="mt-16"
         >
           <p className="text-[#64ffda] font-semibold">
-            Open to Internships • Full-Time • Freelance
+            Open to AI/ML & Data Science Opportunities (Fresher)
           </p>
 
           <a
