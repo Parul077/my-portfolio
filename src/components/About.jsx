@@ -8,9 +8,10 @@ const quickFacts = [
 ];
 
 const learningAreas = [
-  "ML Modeling & Hyperparameter Tuning",
-  "Synthetic Data Backtesting",
-  "Financial, Healthcare & Manufacturing ML",
+  "Synthetic Data Generation",
+  "Model Training & Tuning",
+  "Backtesting (Finance, Health, Mfg)",
+  "Non-Technical Reporting",
   "LLMs",
 ];
 
@@ -102,9 +103,11 @@ const About = () => {
                 <span>Currently Learning & Building</span>
               </h3>
               <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mt-2.5">
-                I am learning and building ML models, doing hyperparameter tuning,
-                and performing backtesting using synthetic datasets from scratch for
-                the financial, healthcare, and manufacturing sectors, as well as LLMs.
+                I generate synthetic datasets from scratch, train ML models on
+                them, perform hyperparameter tuning, execute thorough backtesting
+                across the financial, healthcare, and manufacturing sectors, and
+                translate the outcomes into actionable non-technical reports,
+                alongside working with LLMs.
               </p>
               <div className="flex flex-wrap gap-2 mt-3.5">
                 {learningAreas.map((item) => (
