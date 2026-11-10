@@ -7,6 +7,10 @@ import {
   ChevronDown,
   ChevronUp,
   Cpu,
+  Zap,
+  ShieldCheck,
+  TrendingDown,
+  Layers,
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
@@ -14,6 +18,7 @@ import logoGR from "../assets/logo_GR.png"; // Your Glitch Room logo
 import aiCoachImg from "../assets/ai-career-coach.png";
 import queryPdfImg from "../assets/queryPDF.png";
 import solarImg from "../assets/solar.png";
+import { ProjectSandboxModal } from "./ProjectSandboxes";
 
 // Custom Futuristic Terminal Banner for Jev State Engine
 const JevEngineBanner = () => {
@@ -431,6 +436,7 @@ const getStatusBadgeStyle = (status) => {
 
 const FeaturedProjects = () => {
   const [expandedProjects, setExpandedProjects] = useState({});
+  const [activeSandbox, setActiveSandbox] = useState(null);
 
   const toggleExpand = (title) => {
     setExpandedProjects((prev) => ({
@@ -455,7 +461,81 @@ const FeaturedProjects = () => {
           Featured Projects
         </motion.h2>
 
-        <div className="w-12 h-[3px] rounded-full bg-[#64ffda] mt-3 mb-12"></div>
+        <div className="w-12 h-[3px] rounded-full bg-[#64ffda] mt-3 mb-8"></div>
+
+        {/* Production Mindset / Treat Code as a Product Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="mb-12 p-6 rounded-2xl bg-gradient-to-r from-[#0d203d] via-[#112240] to-[#0d203d] border border-[#233554] shadow-xl"
+        >
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-4 mb-4 border-b border-[#233554]/80">
+            <div>
+              <span className="text-[11px] font-mono text-[#64ffda] uppercase tracking-wider font-semibold">
+                Production Engineering Philosophy
+              </span>
+              <h3 className="text-lg md:text-xl font-bold text-[#ccd6f6] mt-0.5">
+                Treat Code as a Product: Built for Production AI/ML
+              </h3>
+            </div>
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 self-start md:self-auto">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              Interactive Sandboxes Live Below
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="p-3.5 rounded-xl bg-[#0a192f]/70 border border-[#233554] flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 text-[#64ffda] mb-1.5 font-semibold text-sm">
+                  <ShieldCheck size={16} />
+                  <span>Data Quality First</span>
+                </div>
+                <p className="text-gray-300 text-xs leading-relaxed">
+                  12-rule statistical validation engine, 60+ pytest suite, and bounded self-repair to eliminate dirty data & edge cases before model ingestion.
+                </p>
+              </div>
+              <div className="mt-3 pt-2 border-t border-[#233554]/60 text-[11px] font-mono text-emerald-400 flex items-center justify-between">
+                <span>Validation Gate</span>
+                <span className="font-semibold">Zero Leakage</span>
+              </div>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-[#0a192f]/70 border border-[#233554] flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 text-cyan-400 mb-1.5 font-semibold text-sm">
+                  <TrendingDown size={16} />
+                  <span>Cost & Efficiency Metrics</span>
+                </div>
+                <p className="text-gray-300 text-xs leading-relaxed">
+                  Deterministic AST check gating, Git worktree isolation, and single-file blast radius yielding ~75% lower token overhead versus standard ReAct loops.
+                </p>
+              </div>
+              <div className="mt-3 pt-2 border-t border-[#233554]/60 text-[11px] font-mono text-cyan-300 flex items-center justify-between">
+                <span>Token Overhead</span>
+                <span className="font-semibold">~4x Cost Savings</span>
+              </div>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-[#0a192f]/70 border border-[#233554] flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 text-indigo-400 mb-1.5 font-semibold text-sm">
+                  <Layers size={16} />
+                  <span>End-to-End Execution</span>
+                </div>
+                <p className="text-gray-300 text-xs leading-relaxed">
+                  Not just training models in notebooks: full lifecycle engineering spanning automated data pipelines, state machines, Supabase backends, and responsive UIs.
+                </p>
+              </div>
+              <div className="mt-3 pt-2 border-t border-[#233554]/60 text-[11px] font-mono text-indigo-300 flex items-center justify-between">
+                <span>Architecture</span>
+                <span className="font-semibold">Full-Stack AI/ML</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* 2-Card Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -597,7 +677,7 @@ const FeaturedProjects = () => {
               {/* Card Footer */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 pt-3 border-t border-[#233554]/60">
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-1.5 max-w-[60%]">
+                <div className="flex flex-wrap gap-1.5 max-w-[55%]">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
@@ -609,7 +689,17 @@ const FeaturedProjects = () => {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex items-center gap-2 shrink-0">
+                <div className="flex items-center gap-2 shrink-0 flex-wrap sm:flex-nowrap">
+                  {/* Interactive Sandbox Button */}
+                  <button
+                    onClick={() => setActiveSandbox(project)}
+                    className="flex items-center gap-1.5 rounded bg-emerald-500/10 border border-emerald-500/40 px-3 py-1.5 text-xs font-semibold text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-400 transition-all cursor-pointer shadow-sm shadow-emerald-500/10"
+                    title="Open live interactive sandbox for this project"
+                  >
+                    <Zap size={13} className="text-emerald-400 animate-pulse" />
+                    <span>Try Sandbox</span>
+                  </button>
+
                   {project.status === "Coming Soon" ? (
                     <span className="flex items-center gap-1.5 rounded bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 text-xs font-semibold text-amber-400 cursor-not-allowed">
                       <Clock size={13} />
@@ -625,7 +715,7 @@ const FeaturedProjects = () => {
                           className="flex items-center gap-1.5 rounded border border-[#64ffda] px-3 py-1.5 text-xs font-medium text-[#64ffda] transition-all duration-200 hover:bg-[#64ffda]/10"
                         >
                           <FaGithub size={13} />
-                          <span>Source Code</span>
+                          <span>Code</span>
                         </a>
                       )}
 
@@ -637,7 +727,7 @@ const FeaturedProjects = () => {
                           className="flex items-center gap-1.5 rounded bg-[#64ffda] px-3 py-1.5 text-xs font-semibold text-[#0a192f] transition-all duration-200 hover:bg-[#52e0c4]"
                         >
                           <ExternalLink size={13} />
-                          <span>Live Demo</span>
+                          <span>Demo</span>
                         </a>
                       )}
                     </>
@@ -647,6 +737,14 @@ const FeaturedProjects = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Interactive Sandbox Modal */}
+        {activeSandbox && (
+          <ProjectSandboxModal
+            project={activeSandbox}
+            onClose={() => setActiveSandbox(null)}
+          />
+        )}
       </div>
     </section>
   );
