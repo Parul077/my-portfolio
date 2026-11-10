@@ -8,9 +8,6 @@ import {
   ChevronUp,
   Cpu,
   Zap,
-  ShieldCheck,
-  TrendingDown,
-  Layers,
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
@@ -461,81 +458,7 @@ const FeaturedProjects = () => {
           Featured Projects
         </motion.h2>
 
-        <div className="w-12 h-[3px] rounded-full bg-[#64ffda] mt-3 mb-8"></div>
-
-        {/* Production Mindset / Treat Code as a Product Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="mb-12 p-6 rounded-2xl bg-gradient-to-r from-[#0d203d] via-[#112240] to-[#0d203d] border border-[#233554] shadow-xl"
-        >
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-4 mb-4 border-b border-[#233554]/80">
-            <div>
-              <span className="text-[11px] font-mono text-[#64ffda] uppercase tracking-wider font-semibold">
-                Production Engineering Philosophy
-              </span>
-              <h3 className="text-lg md:text-xl font-bold text-[#ccd6f6] mt-0.5">
-                Treat Code as a Product: Built for Production AI/ML
-              </h3>
-            </div>
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 self-start md:self-auto">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Interactive Sandboxes Live Below
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-3.5 rounded-xl bg-[#0a192f]/70 border border-[#233554] flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2 text-[#64ffda] mb-1.5 font-semibold text-sm">
-                  <ShieldCheck size={16} />
-                  <span>Data Quality First</span>
-                </div>
-                <p className="text-gray-300 text-xs leading-relaxed">
-                  12-rule statistical validation engine, 60+ pytest suite, and bounded self-repair to eliminate dirty data & edge cases before model ingestion.
-                </p>
-              </div>
-              <div className="mt-3 pt-2 border-t border-[#233554]/60 text-[11px] font-mono text-emerald-400 flex items-center justify-between">
-                <span>Validation Gate</span>
-                <span className="font-semibold">Zero Leakage</span>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-xl bg-[#0a192f]/70 border border-[#233554] flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2 text-cyan-400 mb-1.5 font-semibold text-sm">
-                  <TrendingDown size={16} />
-                  <span>Cost & Efficiency Metrics</span>
-                </div>
-                <p className="text-gray-300 text-xs leading-relaxed">
-                  Deterministic AST check gating, Git worktree isolation, and single-file blast radius yielding ~75% lower token overhead versus standard ReAct loops.
-                </p>
-              </div>
-              <div className="mt-3 pt-2 border-t border-[#233554]/60 text-[11px] font-mono text-cyan-300 flex items-center justify-between">
-                <span>Token Overhead</span>
-                <span className="font-semibold">~4x Cost Savings</span>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-xl bg-[#0a192f]/70 border border-[#233554] flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2 text-indigo-400 mb-1.5 font-semibold text-sm">
-                  <Layers size={16} />
-                  <span>End-to-End Execution</span>
-                </div>
-                <p className="text-gray-300 text-xs leading-relaxed">
-                  Not just training models in notebooks: full lifecycle engineering spanning automated data pipelines, state machines, Supabase backends, and responsive UIs.
-                </p>
-              </div>
-              <div className="mt-3 pt-2 border-t border-[#233554]/60 text-[11px] font-mono text-indigo-300 flex items-center justify-between">
-                <span>Architecture</span>
-                <span className="font-semibold">Full-Stack AI/ML</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        <div className="w-12 h-[3px] rounded-full bg-[#64ffda] mt-3 mb-12"></div>
 
         {/* 2-Card Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
