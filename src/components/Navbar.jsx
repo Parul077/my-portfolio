@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FiMenu, FiX, FiDownload } from "react-icons/fi";
-import { Sparkles, ExternalLink } from "lucide-react";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
   const [active, setActive] = useState("about");
@@ -54,16 +53,16 @@ const Navbar = () => {
       initial={{ y: -70, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 w-full z-50 bg-[#07070f]/85 backdrop-blur-xl border-b border-white/10"
+      className="fixed top-0 w-full z-50 bg-[#07070f]/80 backdrop-blur-xl border-b border-white/10"
     >
-      <div className="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Brand / Logo */}
         <a
           href="#hero"
           className="flex items-center gap-3 shrink-0 mr-4 group"
         >
           <div
-            className="w-10 h-10 rounded-xl
+            className="w-10 h-10 rounded-lg
             border border-[#64ffda]/40
             bg-[#0d0d1a]
             flex items-center justify-center
@@ -75,16 +74,16 @@ const Navbar = () => {
             PS
           </div>
 
-          <div>
-            <h2 className="text-white font-bold tracking-tight text-sm sm:text-base font-display">
-              PARUL SINGH
+          <div className="hidden sm:block">
+            <h2 className="text-[#ccd6f6] font-semibold leading-none text-base">
+              Parul Singh
             </h2>
-            <p className="text-[10px] font-mono text-[#64ffda]">AI/ML · Data Science</p>
+            <p className="text-xs text-gray-400 mt-1 font-mono">AI • ML Engineer</p>
           </div>
         </a>
 
         {/* Desktop Nav Items */}
-        <div className="hidden lg:flex items-center gap-5 xl:gap-7">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navItems.map((item) => {
             const section = item.name.toLowerCase();
 
@@ -92,13 +91,13 @@ const Navbar = () => {
               <a
                 key={item.id}
                 href={`#${section}`}
-                className={`relative text-xs xl:text-sm font-medium font-mono transition duration-300 ${
+                className={`relative text-sm font-medium transition duration-300 font-mono ${
                   active === section
                     ? "text-[#64ffda]"
                     : "text-gray-300 hover:text-[#64ffda]"
                 }`}
               >
-                <span className="text-[#64ffda]/70 mr-1">{item.id}.</span>
+                <span className="text-[#64ffda] mr-1">{item.id}.</span>
                 {item.name}
 
                 {active === section && (
@@ -112,34 +111,13 @@ const Navbar = () => {
           })}
         </div>
 
-        {/* Desktop Right CTAs */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="#featured-projects"
-            className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0d0d1a] border border-[#64ffda]/30 text-xs font-mono text-[#64ffda] hover:bg-[#64ffda]/10 transition-colors"
-          >
-            <Sparkles size={13} className="text-[#64ffda] animate-pulse" />
-            <span>Sandboxes</span>
-          </a>
-
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg border border-white/20 bg-white/5 text-xs font-mono text-white hover:border-[#64ffda] hover:text-[#64ffda] transition-all"
-          >
-            <span>Resume</span>
-            <ExternalLink size={12} />
-          </a>
-        </div>
-
         {/* Mobile Menu Toggle Button */}
         <button
-          className="lg:hidden text-[#64ffda] p-1.5 rounded-lg bg-[#0d0d1a] border border-white/10"
+          className="lg:hidden text-[#64ffda] p-2 rounded-lg bg-[#0d0d1a] border border-white/10"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation menu"
         >
-          {menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+          {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
       </div>
 
@@ -166,27 +144,6 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
-
-            <div className="pt-3 border-t border-white/10 flex flex-col gap-2.5">
-              <a
-                href="#featured-projects"
-                onClick={() => setMenuOpen(false)}
-                className="flex justify-center items-center gap-2 rounded-xl bg-[#16172e] border border-[#64ffda]/40 py-2.5 text-[#64ffda] text-xs font-bold"
-              >
-                <Sparkles size={14} />
-                Explore Featured Sandboxes
-              </a>
-
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex justify-center items-center gap-2 rounded-xl border border-white/20 py-2.5 text-white hover:border-[#64ffda] text-xs font-medium"
-              >
-                <FiDownload size={14} />
-                Download Resume
-              </a>
-            </div>
           </div>
         </motion.div>
       )}

@@ -225,7 +225,7 @@ const Hero = () => {
                 <FaGithub size={16} />
               </a>
               <a
-                href="https://www.linkedin.com/in/parul-singh-48a042220/"
+                href="https://www.linkedin.com/in/parulsingh1074/"
                 target="_blank"
                 rel="noreferrer"
                 className="p-2.5 rounded-lg bg-[#0d0d1a] border border-white/10 text-gray-400 hover:text-white hover:border-[#64ffda]/40 transition-colors"
@@ -234,7 +234,7 @@ const Hero = () => {
                 <FaLinkedin size={16} />
               </a>
               <a
-                href="https://medium.com/@parulsingh0708"
+                href="https://medium.com/@parulsingh1074"
                 target="_blank"
                 rel="noreferrer"
                 className="p-2.5 rounded-lg bg-[#0d0d1a] border border-white/10 text-gray-400 hover:text-white hover:border-[#64ffda]/40 transition-colors"
