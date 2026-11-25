@@ -7,37 +7,6 @@ import ConstellationGraph from "./ConstellationGraph";
 const Hero = () => {
   const [activeTab, setActiveTab] = useState("yaml"); // 'yaml' or 'telemetry'
 
-  const floatingMetrics = [
-    {
-      metric: "154+",
-      label: "Technical Blogs Published",
-      sub: "Medium AI/ML Deep Dives",
-      accent: "text-amber-400",
-      dot: "bg-amber-400",
-    },
-    {
-      metric: "100%",
-      label: "Test Integrity",
-      sub: "Deterministic AST Gate (~4x Efficiency)",
-      accent: "text-[#64ffda]",
-      dot: "bg-[#64ffda]",
-    },
-    {
-      metric: "8.62",
-      label: "Academic CGPA",
-      sub: "Computer Science Engineering",
-      accent: "text-purple-400",
-      dot: "bg-purple-400",
-    },
-    {
-      metric: "IIT Kanpur",
-      label: "SURGE Research Intern",
-      sub: "ERC Tracker Development",
-      accent: "text-emerald-400",
-      dot: "bg-emerald-400",
-    },
-  ];
-
   return (
     <section
       id="hero"
@@ -246,9 +215,8 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Right Column: Interactive Constellation Graph + Floating Metric Badges */}
-        <div className="lg:col-span-5 flex flex-col items-center justify-center space-y-6">
-          {/* Interactive 3D Knowledge Constellation */}
+        {/* Right Column: Interactive Constellation Graph */}
+        <div className="lg:col-span-5 flex flex-col items-center justify-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -256,36 +224,6 @@ const Hero = () => {
             className="w-full bg-[#0d0d1a]/80 border border-white/10 rounded-2xl p-2 relative shadow-2xl"
           >
             <ConstellationGraph />
-          </motion.div>
-
-          {/* Floating Metric Capsules Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="w-full grid grid-cols-2 gap-3"
-          >
-            {floatingMetrics.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-3 rounded-xl bg-[#0d0d1a]/90 border border-white/10 hover:border-[#64ffda]/30 transition-all duration-300 flex flex-col justify-between"
-              >
-                <div className="flex items-center gap-1.5 mb-1">
-                  <span className={`w-1.5 h-1.5 rounded-full ${item.dot} animate-pulse`} />
-                  <span className={`text-base sm:text-lg font-bold font-mono ${item.accent}`}>
-                    {item.metric}
-                  </span>
-                </div>
-                <div>
-                  <p className="text-[11px] font-semibold text-gray-200 leading-tight">
-                    {item.label}
-                  </p>
-                  <p className="text-[10px] text-gray-400 font-mono mt-0.5 truncate">
-                    {item.sub}
-                  </p>
-                </div>
-              </div>
-            ))}
           </motion.div>
         </div>
       </div>
