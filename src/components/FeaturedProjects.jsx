@@ -445,20 +445,24 @@ const FeaturedProjects = () => {
   return (
     <section
       id="featured-projects"
-      className="bg-[#0a192f] px-6 md:px-12 py-20"
+      className="bg-[#07070f] px-6 md:px-12 py-24 border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-[#ccd6f6]"
+          className="mb-14"
         >
-          Featured Projects
-        </motion.h2>
-
-        <div className="w-12 h-[3px] rounded-full bg-[#64ffda] mt-3 mb-12"></div>
+          <span className="text-xs font-mono text-[#64ffda] uppercase tracking-wider font-semibold">
+            04. Production Work
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white font-display mt-1">
+            Featured Projects
+          </h2>
+          <div className="w-12 h-[3px] rounded-full bg-gradient-to-r from-[#64ffda] to-purple-500 mt-3" />
+        </motion.div>
 
         {/* 2-Card Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -469,7 +473,7 @@ const FeaturedProjects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="flex flex-col justify-between bg-[#112240]/50 border border-[#233554] rounded-xl overflow-hidden p-5 transition-all duration-300 hover:border-[#64ffda]/30 hover:-translate-y-1 hover:shadow-2xl"
+              className="flex flex-col justify-between bg-[#0d0d1a] border border-white/10 rounded-2xl overflow-hidden p-6 transition-all duration-300 hover:border-[#64ffda]/30 hover:-translate-y-1 hover:shadow-2xl"
             >
               {/* Card Main Body */}
               <div>

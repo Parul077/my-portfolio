@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { BookOpen, ExternalLink, ArrowRight } from "lucide-react";
+import { FaMedium } from "react-icons/fa";
 
 const blogs = [
   {
@@ -52,115 +54,142 @@ const blogs = [
 ];
 
 const Blogs = () => {
-  // 🔥 Sort blogs by latest date
   const sortedBlogs = [...blogs].sort(
     (a, b) => new Date(b.date) - new Date(a.date),
   );
 
-  // ✅ Auto split
   const recentBlogs = sortedBlogs.slice(0, 2);
   const otherBlogs = sortedBlogs.slice(2);
 
   return (
-    <section id="blogs" className="px-6 md:px-20 py-20 bg-[#0a192f]">
-      {/* Title */}
-      {/* Section Heading */}
-      <div className="mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#ccd6f6]">
-          Technical Writing
-        </h2>
-
-        <div className="w-16 h-[3px] rounded-full bg-[#64ffda] mt-4 mb-5"></div>
-
-        <p className="text-[#64ffda] text-lg font-semibold">
-          154+ Technical Articles on AI, Machine Learning & Deep Learning
-        </p>
-
-        <p className="mt-3 max-w-3xl text-gray-400 leading-relaxed">
-          Sharing practical insights on Artificial Intelligence, Machine
-          Learning, Deep Learning, and Software Development through in-depth
-          technical articles, tutorials, and implementation guides.
-        </p>
-      </div>
-
-      {/* Latest Blogs */}
-      <h3 className="text-lg font-semibold text-[#64ffda] mb-6">
-        Latest Articles
-      </h3>
-
-      <div className="grid md:grid-cols-2 gap-6 mb-12">
-        {recentBlogs.map((blog, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            className="bg-[#112240] p-6 rounded-lg hover:-translate-y-2 hover:shadow-[0_0_25px_#64ffda30] transition duration-300 flex flex-col justify-between"
-          >
-            <div>
-              <p className="text-xs text-[#64ffda] mb-2">{blog.date}</p>
-
-              <h3 className="text-xl font-semibold text-white">{blog.title}</h3>
-
-              <p className="text-sm text-gray-400 mt-2">{blog.desc}</p>
-            </div>
-
-            <a
-              href={blog.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 text-[#64ffda] hover:underline"
-            >
-              Read Article →
-            </a>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* 🧩 More Blogs */}
-      <h3 className="text-lg text-gray-400 mb-6">More Articles</h3>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {otherBlogs.map((blog, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            className="bg-[#112240] p-5 rounded-lg hover:-translate-y-2 transition duration-300 flex flex-col justify-between"
-          >
-            <div>
-              <h4 className="text-white font-medium">{blog.title}</h4>
-
-              <p className="text-xs text-gray-500 mt-2">{blog.date}</p>
-
-              <p className="text-xs text-gray-400 mt-2 line-clamp-2">
-                {blog.desc}
-              </p>
-            </div>
-
-            <a
-              href={blog.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-[#64ffda] mt-3 inline-block hover:underline"
-            >
-              Read →
-            </a>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* 🚀 CTA Buttons */}
-      <div className="flex flex-wrap gap-4 mt-12">
-        <a
-          href="https://medium.com/@parulsingh1074"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#64ffda] text-[#0a192f] px-6 py-3 rounded hover:opacity-90 transition font-medium text-sm"
+    <section id="blogs" className="px-6 sm:px-12 md:px-24 py-24 bg-[#07070f] border-t border-white/5">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-14"
         >
-          Visit my Medium (154+ Articles) →
-        </a>
+          <span className="text-xs font-mono text-[#64ffda] uppercase tracking-wider font-semibold">
+            06. Publications & Research
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white font-display mt-1">
+            Technical Writing
+          </h2>
+          <div className="w-12 h-[3px] rounded-full bg-gradient-to-r from-[#64ffda] to-purple-500 mt-3 mb-4" />
+
+          <p className="text-[#64ffda] text-base sm:text-lg font-semibold font-mono">
+            154+ Technical Articles on AI, Machine Learning & Deep Learning
+          </p>
+          <p className="mt-2 max-w-3xl text-gray-300 text-xs sm:text-sm leading-relaxed">
+            Sharing practical insights on Artificial Intelligence, Machine Learning, Deep
+            Learning, and Software Architecture through in-depth technical breakdowns,
+            mathematical intuitions, and production implementation guides.
+          </p>
+        </motion.div>
+
+        {/* Featured Latest Articles */}
+        <div className="mb-6">
+          <span className="text-xs font-mono font-bold tracking-wider text-gray-400 uppercase">
+            Latest Deep Dives
+          </span>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          {recentBlogs.map((blog, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-[#0d0d1a] border border-white/10 p-6 sm:p-7 rounded-2xl hover:border-[#64ffda]/40 hover:-translate-y-1 hover:shadow-2xl transition duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center gap-2 text-xs font-mono text-[#64ffda] mb-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#64ffda] animate-pulse" />
+                  <span>{blog.date}</span>
+                </div>
+
+                <h3 className="text-xl font-bold text-white font-display leading-snug">
+                  {blog.title}
+                </h3>
+
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mt-2.5">
+                  {blog.desc}
+                </p>
+              </div>
+
+              <a
+                href={blog.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-6 text-xs font-mono font-medium text-[#64ffda] hover:text-white transition"
+              >
+                <span>Read Article</span>
+                <ArrowRight size={14} />
+              </a>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* More Articles */}
+        <div className="mb-6">
+          <span className="text-xs font-mono font-bold tracking-wider text-gray-400 uppercase">
+            More Selected Deep Dives
+          </span>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {otherBlogs.map((blog, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08 }}
+              className="bg-[#0d0d1a] border border-white/10 p-6 rounded-2xl hover:border-purple-400/40 hover:-translate-y-1 transition duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[11px] font-mono text-gray-400 block mb-2">
+                  {blog.date}
+                </span>
+
+                <h4 className="text-base font-bold text-white font-display leading-snug">
+                  {blog.title}
+                </h4>
+
+                <p className="text-xs text-gray-300 leading-relaxed mt-2 line-clamp-3">
+                  {blog.desc}
+                </p>
+              </div>
+
+              <a
+                href={blog.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-purple-400 hover:text-white mt-5 transition"
+              >
+                <span>Read Deep Dive</span>
+                <ExternalLink size={12} />
+              </a>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Medium Profile CTA */}
+        <div className="flex justify-center mt-14">
+          <a
+            href="https://medium.com/@parulsingh1074"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 bg-gradient-to-r from-purple-500 to-[#64ffda] text-[#07070f] font-mono font-bold text-xs sm:text-sm px-7 py-3.5 rounded-xl shadow-[0_0_20px_rgba(100,255,218,0.2)] hover:scale-[1.02] transition-all duration-200"
+          >
+            <FaMedium size={18} />
+            <span>Explore All 154+ Articles on Medium</span>
+          </a>
+        </div>
       </div>
     </section>
   );

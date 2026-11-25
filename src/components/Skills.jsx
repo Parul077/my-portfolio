@@ -4,46 +4,42 @@ import {
   BrainCircuit,
   Library,
   Database,
-  Wrench,
-  CheckCircle2,
   BarChart3,
-  Bot,
+  ShieldCheck,
+  Globe,
 } from "lucide-react";
 
 const skillCategories = [
   {
     title: "Programming",
-    icon: <Code2 size={22} />,
+    icon: <Code2 size={20} className="text-[#64ffda]" />,
     skills: [
       "Python",
       "SQL",
-      "JavaScript",
       "Object-Oriented Programming (OOP)",
     ],
   },
   {
     title: "AI & Machine Learning",
-    icon: <BrainCircuit size={22} />,
+    icon: <BrainCircuit size={20} className="text-purple-400" />,
     skills: [
       "Machine Learning",
       "Deep Learning",
       "Natural Language Processing (NLP)",
+      "Computer Vision",
       "Large Language Models (LLMs)",
       "Generative AI",
       "Retrieval-Augmented Generation (RAG)",
-      "Computer Vision",
-      "Autonomous AI Agents",
     ],
   },
   {
     title: "Frameworks & Libraries",
-    icon: <Library size={22} />,
+    icon: <Library size={20} className="text-cyan-400" />,
     skills: [
-      "LangGraph",
-      "LangChain",
       "TensorFlow",
       "Keras",
       "Scikit-learn",
+      "LangChain",
       "FAISS",
       "Django",
       "Flask",
@@ -52,113 +48,107 @@ const skillCategories = [
   },
   {
     title: "Data & Analytics",
-    icon: <BarChart3 size={22} />,
+    icon: <BarChart3 size={20} className="text-amber-400" />,
     skills: [
+      "Excel",
+      "Power BI",
+      "Data Cleaning",
+      "Exploratory Data Analysis (EDA)",
+      "Data Visualization",
       "Pandas",
       "NumPy",
       "SciPy",
       "Matplotlib",
       "NLTK",
-      "Synthetic Data Generation",
-      "Statistical Validation",
       "Feature Engineering",
       "Model Evaluation",
+      "Statistical Validation",
+      "Synthetic Data Generation",
+      "Dashboard Development",
+      "Data Reporting",
     ],
   },
   {
     title: "Testing & Data Quality",
-    icon: <CheckCircle2 size={22} />,
+    icon: <ShieldCheck size={20} className="text-emerald-400" />,
     skills: [
       "Pytest",
       "Automated Validation",
       "Data Integrity Checks",
       "Range/Distribution/Correlation Checks",
       "Bounded Repair",
-      "AST Analysis",
     ],
   },
   {
-    title: "Web, Cloud & Databases",
-    icon: <Database size={22} />,
+    title: "Web, Tools & Databases",
+    icon: <Globe size={20} className="text-blue-400" />,
     skills: [
       "React",
       "Tailwind CSS",
-      "MySQL",
-      "SQLite",
-      "Supabase / PostgreSQL",
       "Docker",
-      "Git & Git Worktrees",
+      "Git",
       "GitHub",
       "Vercel",
       "Netlify",
       "Render",
-    ],
-  },
-  {
-    title: "AI APIs & Platforms",
-    icon: <Bot size={22} />,
-    skills: [
+      "MySQL",
+      "Supabase / PostgreSQL",
       "Claude API",
-      "Gemini API",
-      "Ollama",
-      "Google AI Studio",
-      "Groq",
-      "Hugging Face",
-      "OpenRouter",
     ],
   },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="bg-[#0a192f] px-6 md:px-20 py-20">
+    <section id="skills" className="bg-[#07070f] px-6 sm:px-12 md:px-24 py-24 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        {/* Heading */}
-
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+        {/* Section Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-[#ccd6f6]"
+          className="mb-14"
         >
-          Technical Skills
-        </motion.h2>
+          <span className="text-xs font-mono text-[#64ffda] uppercase tracking-wider font-semibold">
+            03. Technical Capabilities
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white font-display mt-1">
+            Skills & Stack
+          </h2>
+          <div className="w-12 h-[3px] rounded-full bg-gradient-to-r from-[#64ffda] to-purple-500 mt-3" />
+        </motion.div>
 
-        <div className="w-16 h-[3px] rounded-full bg-[#64ffda] mt-4 mb-14"></div>
-
-        {/* Cards */}
-
-        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
-          {skillCategories.map((category, index) => (
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillCategories.map((cat, idx) => (
             <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 40 }}
+              key={cat.title}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.08 }}
-              className="bg-[#112240]/80 border border-[#233554] rounded-2xl p-5 hover:border-[#64ffda]/40 hover:-translate-y-2 transition-all duration-300"
+              transition={{ duration: 0.4, delay: idx * 0.08 }}
+              className="bg-[#0d0d1a] border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-[#64ffda]/40 hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between"
             >
-              {/* Header */}
+              <div>
+                <div className="flex items-center gap-3 mb-4 pb-3 border-b border-white/5">
+                  <div className="p-2 rounded-xl bg-[#16172e] border border-white/10">
+                    {cat.icon}
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-white font-display">
+                    {cat.title}
+                  </h3>
+                </div>
 
-              <div className="flex items-center gap-3 mb-4">
-                <div className="text-[#64ffda]">{category.icon}</div>
-
-                <h3 className="text-base font-semibold text-[#ccd6f6]">
-                  {category.title}
-                </h3>
-              </div>
-
-              {/* Skills */}
-
-              <div className="flex flex-wrap gap-2.5">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 rounded-md border border-[#233554] bg-[#0a192f] text-gray-300 text-xs font-medium hover:border-[#64ffda]/50 hover:text-[#64ffda] transition-all duration-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
+                <div className="flex flex-wrap gap-2">
+                  {cat.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-2.5 py-1 rounded-lg border border-white/10 bg-[#16172e] text-gray-300 text-xs font-mono hover:border-[#64ffda]/50 hover:text-[#64ffda] transition-all duration-200"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
