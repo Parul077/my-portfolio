@@ -11,13 +11,13 @@ const contacts = [
   },
   {
     title: "LinkedIn",
-    value: "linkedin.com/in/parulsingh1074",
+    value: "in/parulsingh1074",
     icon: <FiLinkedin size={22} />,
     link: "https://www.linkedin.com/in/parulsingh1074/",
   },
   {
     title: "Medium",
-    value: "medium.com/@parulsingh1074",
+    value: "@parulsingh1074",
     icon: <FaMedium size={22} />,
     link: "https://medium.com/@parulsingh1074",
   },
@@ -41,7 +41,7 @@ const Contact = () => {
           className="mb-8"
         >
           <span className="text-xs font-mono text-[#64ffda] uppercase tracking-wider font-semibold">
-            08. What's Next?
+            07. What's Next?
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-white font-display mt-2">
             Let's Build Something Together

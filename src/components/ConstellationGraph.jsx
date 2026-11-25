@@ -373,7 +373,7 @@ const ConstellationGraph = () => {
       )}
 
       {/* Subtle Hint Bar */}
-      <div className="relative z-10 flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-[#0d0d1a]/80 border border-white/10 backdrop-blur-sm text-[10px] font-mono text-gray-400 tracking-wider">
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-[#0d0d1a]/90 border border-white/15 backdrop-blur-md text-[10px] font-mono text-gray-300 tracking-wider pointer-events-none shadow-lg">
         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
         <span>DRAG · HOVER · EXPLORE KNOWLEDGE GRAPH</span>
       </div>

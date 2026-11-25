@@ -7,39 +7,39 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = [
-    { id: "01", name: "About" },
-    { id: "02", name: "Experience" },
-    { id: "03", name: "Skills" },
-    { id: "04", name: "Projects" },
-    { id: "05", name: "Blogs" },
-    { id: "06", name: "Achievements" },
-    { id: "07", name: "Contact" },
+    { id: "01", name: "About", target: "about" },
+    { id: "02", name: "Experience", target: "experience" },
+    { id: "03", name: "Skills", target: "skills" },
+    { id: "04", name: "Projects", target: "featured-projects" },
+    { id: "05", name: "Blogs", target: "blogs" },
+    { id: "06", name: "Achievements", target: "achievements" },
+    { id: "07", name: "Contact", target: "contact" },
   ];
 
   useEffect(() => {
     const sections = [
-      "about",
-      "experience",
-      "skills",
-      "projects",
-      "blogs",
-      "achievements",
-      "contact",
+      { key: "about", id: "about" },
+      { key: "experience", id: "experience" },
+      { key: "skills", id: "skills" },
+      { key: "projects", id: "featured-projects" },
+      { key: "projects", id: "projects" },
+      { key: "blogs", id: "blogs" },
+      { key: "achievements", id: "achievements" },
+      { key: "contact", id: "contact" },
     ];
 
     const handleScroll = () => {
-      sections.forEach((section) => {
-        const element = document.getElementById(section);
-
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
         if (element) {
-          const top = element.offsetTop - 120;
+          const top = element.offsetTop - 140;
           const height = element.offsetHeight;
-
           if (window.scrollY >= top && window.scrollY < top + height) {
-            setActive(section);
+            setActive(section.key);
+            break;
           }
         }
-      });
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -59,14 +59,14 @@ const Navbar = () => {
         {/* Desktop Nav Items (Centered) */}
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navItems.map((item) => {
-            const section = item.name.toLowerCase();
+            const isSelected = active === item.name.toLowerCase();
 
             return (
               <a
                 key={item.id}
-                href={`#${section}`}
+                href={`#${item.target}`}
                 className={`relative text-sm font-medium transition duration-300 font-mono ${
-                  active === section
+                  isSelected
                     ? "text-[#64ffda]"
                     : "text-gray-300 hover:text-[#64ffda]"
                 }`}
@@ -74,7 +74,7 @@ const Navbar = () => {
                 <span className="text-[#64ffda] mr-1">{item.id}.</span>
                 {item.name}
 
-                {active === section && (
+                {isSelected && (
                   <motion.div
                     layoutId="navbar-active"
                     className="absolute -bottom-2 left-0 h-[2px] w-full bg-[#64ffda] rounded-full shadow-[0_0_8px_#64ffda]"
@@ -106,7 +106,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <a
                 key={item.id}
-                href={`#${item.name.toLowerCase()}`}
+                href={`#${item.target}`}
                 onClick={() => setMenuOpen(false)}
                 className={`transition ${
                   active === item.name.toLowerCase()

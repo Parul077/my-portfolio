@@ -72,29 +72,33 @@ const Hero = () => {
           >
             {/* Terminal Tab Bar */}
             <div className="flex items-center justify-between px-4 py-2 bg-[#090a15] border-b border-white/10 text-xs font-mono">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 sm:gap-2">
                 <button
                   onClick={() => setActiveTab("yaml")}
-                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded transition-colors cursor-pointer ${
+                  className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded transition-colors cursor-pointer text-[10px] sm:text-xs ${
                     activeTab === "yaml"
                       ? "bg-[#181930] text-[#64ffda] border border-[#64ffda]/30"
                       : "text-gray-400 hover:text-gray-200"
                   }`}
                 >
-                  <FileCode size={13} />
-                  <span>engineer_spec.yaml</span>
+                  <FileCode size={12} className="shrink-0" />
+                  <span>
+                    <span className="hidden sm:inline">engineer_</span>spec.yaml
+                  </span>
                 </button>
 
                 <button
                   onClick={() => setActiveTab("telemetry")}
-                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded transition-colors cursor-pointer ${
+                  className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded transition-colors cursor-pointer text-[10px] sm:text-xs ${
                     activeTab === "telemetry"
                       ? "bg-[#181930] text-amber-400 border border-amber-400/30"
                       : "text-gray-400 hover:text-gray-200"
                   }`}
                 >
-                  <Terminal size={13} />
-                  <span>runtime_telemetry.log</span>
+                  <Terminal size={12} className="shrink-0" />
+                  <span>
+                    <span className="hidden sm:inline">runtime_</span>telemetry.log
+                  </span>
                 </button>
               </div>
 

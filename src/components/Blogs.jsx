@@ -72,7 +72,7 @@ const Blogs = () => {
           className="mb-14"
         >
           <span className="text-xs font-mono text-[#64ffda] uppercase tracking-wider font-semibold">
-            06. Publications & Research
+            05. Publications & Research
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white font-display mt-1">
             Technical Writing
