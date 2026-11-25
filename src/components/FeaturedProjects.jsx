@@ -1,17 +1,9 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  ExternalLink,
-  CheckCircle2,
-  Clock,
-  ChevronDown,
-  ChevronUp,
-  Cpu,
-  Zap,
-} from "lucide-react";
+import { motion } from "framer-motion";
+import { ExternalLink, Zap, Clock } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
-import logoGR from "../assets/logo_GR.png"; // Your Glitch Room logo
+import logoGR from "../assets/logo_GR.png";
 import aiCoachImg from "../assets/ai-career-coach.png";
 import queryPdfImg from "../assets/queryPDF.png";
 import solarImg from "../assets/solar.png";
@@ -20,8 +12,7 @@ import { ProjectSandboxModal } from "./ProjectSandboxes";
 // Custom Futuristic Terminal Banner for Jev State Engine
 const JevEngineBanner = () => {
   return (
-    <div className="relative w-full h-full bg-[#071324] overflow-hidden flex flex-col justify-between p-4 border border-[#233554] rounded-lg group select-none">
-      {/* Background Grid & Glow */}
+    <div className="relative w-full h-full bg-[#071324] overflow-hidden flex flex-col justify-between p-4 border border-[#233554] rounded-xl group select-none">
       <div
         className="absolute inset-0 opacity-15 pointer-events-none"
         style={{
@@ -29,10 +20,6 @@ const JevEngineBanner = () => {
           backgroundSize: `24px 24px`,
         }}
       />
-      <div className="absolute top-0 right-0 w-44 h-44 bg-teal-500/10 rounded-full blur-3xl group-hover:bg-teal-500/20 transition-all duration-500" />
-      <div className="absolute bottom-0 left-0 w-36 h-36 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all duration-500" />
-
-      {/* Terminal Title Bar */}
       <div className="relative z-10 flex items-center justify-between border-b border-[#233554]/80 pb-2">
         <div className="flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
@@ -42,20 +29,12 @@ const JevEngineBanner = () => {
             jev-state-engine // fsm-runtime
           </span>
         </div>
-        <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full">
           Deterministic Gated IoC
         </span>
       </div>
 
-      {/* Visual Lifecycle Pipeline */}
       <div className="relative z-10 my-auto py-2">
-        <div className="text-[10px] font-mono text-[#64ffda] uppercase tracking-wider mb-2 flex items-center justify-between">
-          <span>5-Stage Deterministic Lifecycle</span>
-          <span className="text-gray-400 font-mono text-[9px]">LangGraph • IoC</span>
-        </div>
-
-        {/* Stages Flow */}
         <div className="grid grid-cols-5 gap-1 text-center font-mono">
           {[
             { name: "Investigate", tag: "S1" },
@@ -66,12 +45,12 @@ const JevEngineBanner = () => {
           ].map((stage) => (
             <div
               key={stage.name}
-              className="bg-[#0f2342] border border-[#233554] group-hover:border-[#64ffda]/40 rounded px-1 py-1.5 transition-all duration-300"
+              className="bg-[#0f2342] border border-[#233554] rounded px-1 py-1.5"
             >
-              <span className="block text-[8px] text-gray-400 uppercase tracking-tight">
+              <span className="block text-[8px] text-gray-400 uppercase">
                 {stage.tag}
               </span>
-              <span className="block text-[10px] font-bold text-gray-200 group-hover:text-[#64ffda] truncate">
+              <span className="block text-[10px] font-bold text-gray-200 truncate">
                 {stage.name}
               </span>
             </div>
@@ -79,12 +58,8 @@ const JevEngineBanner = () => {
         </div>
       </div>
 
-      {/* Terminal Telemetry Bar */}
       <div className="relative z-10 flex items-center justify-between pt-2 border-t border-[#233554]/80 text-[10px] font-mono">
-        <div className="flex items-center gap-2 text-gray-300">
-          <span className="text-[#64ffda]">&gt;</span>
-          <span>sqlparse: 100% pass (509 tests, 0 reg.)</span>
-        </div>
+        <span className="text-gray-300">sqlparse: 100% pass (509 tests)</span>
         <span className="text-cyan-300 font-semibold bg-[#112240] px-2 py-0.5 rounded border border-cyan-500/30">
           ~4x Token Efficiency
         </span>
@@ -96,8 +71,7 @@ const JevEngineBanner = () => {
 // Custom Banner Component for Synthetic Data Generator
 const SyntheticDataBanner = () => {
   return (
-    <div className="relative w-full h-full bg-[#081a2e] overflow-hidden flex flex-col justify-between p-4 border border-[#233554] rounded-lg group select-none">
-      {/* Background Matrix/Grid */}
+    <div className="relative w-full h-full bg-[#081a2e] overflow-hidden flex flex-col justify-between p-4 border border-[#233554] rounded-xl group select-none">
       <div
         className="absolute inset-0 opacity-15 pointer-events-none"
         style={{
@@ -105,10 +79,6 @@ const SyntheticDataBanner = () => {
           backgroundSize: `20px 20px`,
         }}
       />
-      <div className="absolute top-0 right-0 w-36 h-36 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all duration-500" />
-      <div className="absolute bottom-0 left-0 w-36 h-36 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500" />
-
-      {/* Terminal Title Bar */}
       <div className="relative z-10 flex items-center justify-between border-b border-[#233554]/80 pb-2">
         <div className="flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
@@ -118,19 +88,12 @@ const SyntheticDataBanner = () => {
             synthetic-data // pipeline.py
           </span>
         </div>
-        <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 px-2 py-0.5 rounded-full">
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-          Bounded Repair
+        <span className="text-[10px] font-mono text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 px-2 py-0.5 rounded-full">
+          Bounded Self-Repair
         </span>
       </div>
 
-      {/* Pipeline Stages Flow */}
       <div className="relative z-10 my-auto py-2">
-        <div className="text-[10px] font-mono text-[#64ffda] uppercase tracking-wider mb-2 flex items-center justify-between">
-          <span>Excel Spec to Multi-Format Pipeline</span>
-          <span className="text-gray-400 font-mono text-[9px]">Claude API • Pytest</span>
-        </div>
-
         <div className="grid grid-cols-4 gap-1.5 text-center font-mono">
           {[
             { label: "Spec Parser", sub: "Excel / Rules" },
@@ -140,12 +103,12 @@ const SyntheticDataBanner = () => {
           ].map((stage) => (
             <div
               key={stage.label}
-              className="bg-[#0f2342] border border-[#233554] group-hover:border-[#64ffda]/40 rounded px-1 py-1.5 transition-all duration-300"
+              className="bg-[#0f2342] border border-[#233554] rounded px-1 py-1.5"
             >
-              <span className="block text-[10px] font-bold text-gray-200 group-hover:text-[#64ffda] truncate">
+              <span className="block text-[10px] font-bold text-gray-200 truncate">
                 {stage.label}
               </span>
-              <span className="block text-[8px] text-gray-400 uppercase tracking-tight truncate">
+              <span className="block text-[8px] text-gray-400 uppercase truncate">
                 {stage.sub}
               </span>
             </div>
@@ -153,12 +116,8 @@ const SyntheticDataBanner = () => {
         </div>
       </div>
 
-      {/* Telemetry Bar */}
       <div className="relative z-10 flex items-center justify-between pt-2 border-t border-[#233554]/80 text-[10px] font-mono">
-        <div className="flex items-center gap-2 text-gray-300">
-          <span className="text-[#64ffda]">&gt;</span>
-          <span>60+ Pytest Suite • Mock Offline Mode</span>
-        </div>
+        <span className="text-gray-300">60+ Pytest Suite • Mock Offline Mode</span>
         <span className="text-emerald-400 font-semibold bg-[#112240] px-2 py-0.5 rounded border border-emerald-500/30">
           Zero Leakage
         </span>
@@ -174,9 +133,8 @@ const GlitchRoomBanner = ({ liveUrl }) => {
       href={liveUrl || "https://joinglitchroom.com/"}
       target="_blank"
       rel="noreferrer"
-      className="relative w-full h-full bg-[#0a192f] overflow-hidden flex flex-col items-center justify-center border border-[#233554] rounded-lg group block cursor-pointer"
+      className="relative w-full h-full bg-[#0a192f] overflow-hidden flex flex-col items-center justify-center border border-[#233554] rounded-xl group block cursor-pointer"
     >
-      {/* Cyber Grid Background */}
       <div
         className="absolute inset-0 opacity-20"
         style={{
@@ -185,30 +143,20 @@ const GlitchRoomBanner = ({ liveUrl }) => {
           backgroundPosition: `0 0, 10px 10px`,
         }}
       />
-
-      {/* Neon Glow */}
-      <div className="absolute w-32 h-32 bg-cyan-500/20 rounded-full blur-2xl group-hover:bg-cyan-500/35 transition-all duration-500" />
-
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-2.5">
-        <div className="w-16 h-16 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-110">
+      <div className="relative z-10 flex flex-col items-center gap-2">
+        <div className="w-14 h-14 transition-transform duration-300 group-hover:scale-110">
           <img
             src={logoGR}
             alt="Glitch Room Logo"
             className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(0,210,255,0.4)]"
           />
         </div>
-
-        <h4 className="text-white font-bold text-base md:text-lg tracking-wider font-mono">
+        <h4 className="text-white font-bold text-base tracking-wider font-mono">
           GLITCH ROOM
         </h4>
-
-        <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#112240] border border-emerald-500/40 shadow-[0_0_10px_rgba(16,185,129,0.15)]">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-[10px] font-mono font-semibold tracking-widest text-emerald-300 uppercase">
-            Live Platform
-          </span>
-        </div>
+        <span className="text-[10px] font-mono font-semibold text-emerald-300 px-2.5 py-0.5 rounded-full bg-[#112240] border border-emerald-500/40">
+          Live Interactive Platform ↗
+        </span>
       </div>
     </a>
   );
@@ -217,42 +165,12 @@ const GlitchRoomBanner = ({ liveUrl }) => {
 const featuredProjects = [
   {
     number: "01",
-    category: "AUTONOMOUS CODING RUNTIME",
+    category: "AUTONOMOUS AGENT RUNTIME",
     status: "Completed",
     title: "Jev State Engine",
-    subtitle: "Deterministic Gated Autonomous Coding Runtime",
     description:
-      "A deterministic state-machine runtime for autonomous coding tasks, using mechanical AST/pytest checks and an LLM semantic gate to control untrusted code-generation agents.",
-    highlights: [
-      "Deterministic State-Machine Runtime",
-      "Mechanical AST & Pytest Gate",
-      "Git Worktree Isolation & 3-Strike Breaker",
-      "100% Test Integrity (~4x Efficiency)",
-    ],
-    detailedPoints: [
-      {
-        title: "Deterministic State-Machine Runtime",
-        desc: "Built a deterministic state-machine runtime for autonomous coding tasks, using mechanical AST/pytest checks and an LLM semantic gate to control untrusted code-generation agents.",
-      },
-      {
-        title: "Worktree Isolation & Circuit Breaker",
-        desc: "Isolated code changes in Git worktrees and added a 3-strike circuit breaker with forensic post-mortems using a local Qwen 1.5B advisor.",
-      },
-      {
-        title: "Empirical Multi-Repo Benchmarking",
-        desc: "Benchmarked 17 runs on sqlparse and humanize; tasks completed in one subgoal at ~9.5k tokens, with 100% test integrity and ~75% lower token overhead versus standard ReAct agents.",
-      },
-    ],
-    tech: [
-      "Python",
-      "LangGraph",
-      "Git Worktrees",
-      "AST",
-      "SQLite",
-      "Ollama (Qwen 2.5 Coder)",
-      "Gemini API",
-      "Pytest",
-    ],
+      "A deterministic state-machine runtime for autonomous coding agents, utilizing mechanical AST/pytest checks, Git worktree isolation, and a 3-strike circuit breaker to eliminate rogue agent loops.",
+    tech: ["Python", "LangGraph", "AST", "Git Worktrees", "Pytest"],
     github: "https://github.com/Parul077/jev-state-engine",
     live: null,
     isJevEngine: true,
@@ -262,106 +180,34 @@ const featuredProjects = [
     category: "SYNTHETIC DATA PIPELINE",
     status: "Completed",
     title: "Synthetic Data Generator",
-    subtitle: "Specification-Driven Data Synthesis & Validation",
     description:
-      "A robust specification-driven workflow that converts Excel specifications into synthetic datasets and exports CSV, XLSX, JSON, DOCX, and PDF deliverables with automated validation.",
-    highlights: [
-      "Excel Spec to Multi-Format Export",
-      "Ranges, Distributions & Correlation Checks",
-      "Bounded Repair & 60+ Test Suite",
-      "Offline Mock Mode & Safe Formula Eval",
-    ],
-    detailedPoints: [
-      {
-        title: "Specification-Driven Synthesis",
-        desc: "Built a workflow that converts Excel specifications into synthetic datasets and exports CSV, XLSX, JSON, DOCX, and PDF deliverables.",
-      },
-      {
-        title: "Statistical Validation & Bounded Repair",
-        desc: "Added checks for row counts, unique IDs, ranges, distributions, and correlations, with bounded repair and a 60+ test suite.",
-      },
-      {
-        title: "Offline Mock Mode & Formula Evaluation",
-        desc: "Included offline mock mode and safe formula evaluation to support repeatable generation and testing without a live API dependency.",
-      },
-    ],
-    tech: [
-      "Python",
-      "Pandas",
-      "NumPy",
-      "SciPy",
-      "Streamlit",
-      "Claude API",
-      "Pytest",
-    ],
+      "A specification-driven pipeline that converts complex domain Excel specs into multi-format synthetic datasets with an automated 12-rule statistical validation engine and bounded self-repair.",
+    tech: ["Python", "Pandas", "NumPy", "SciPy", "Streamlit", "Pytest"],
     github: "https://github.com/Parul077/synthetic-data-generator",
     live: null,
     isSyntheticData: true,
   },
   {
     number: "03",
-    category: "INTERACTIVE LEARNING PLATFORM",
+    category: "DEVELOPER LEARNING PLATFORM",
     status: "Live",
     title: "The Glitch Room",
-    subtitle: "Gamified Developer Learning Platform",
     description:
-      "A gamified learning platform with AI-generated challenges, automated feedback, interactive dashboards, leaderboards, and collaborative Creator Rooms.",
-    highlights: [
-      "Gamified Learning Platform",
-      "AI-Generated Challenges & Feedback",
-      "Creator Rooms & Leaderboards",
-      "AI-Assisted Progress Workflows",
-    ],
-    detailedPoints: [
-      {
-        title: "Gamified Challenge Engine",
-        desc: "Developed a gamified learning platform with AI-generated challenges and automated feedback.",
-      },
-      {
-        title: "Interactive Dashboards & Creator Rooms",
-        desc: "Built interactive dashboards, leaderboards, and collaborative Creator Rooms using React and Supabase.",
-      },
-      {
-        title: "AI-Assisted Evaluation Workflows",
-        desc: "Added AI-assisted evaluation and progress workflows to support hands-on practice and learning consistency.",
-      },
-    ],
-    tech: ["React", "Tailwind CSS", "Framer Motion", "Supabase", "Generative AI"],
+      "A gamified developer learning platform with real-time code challenges, a 3-stage interactive debugging arena, collaborative Creator Rooms, and automated AI evaluation.",
+    tech: ["React", "Tailwind CSS", "Framer Motion", "Supabase", "AI"],
     github: null,
     live: "https://joinglitchroom.com/",
     isGlitchRoom: true,
   },
   {
     number: "04",
-    category: "RAG APPLICATION",
+    category: "RAG & VECTOR SEARCH",
     status: "Completed",
     title: "QueryPDF",
-    subtitle: "AI-Powered Document Assistant using Vector Search",
     description:
-      "A document assistant supporting natural-language questions about PDF content using semantic vector retrieval and context-aware LLM answers.",
-    highlights: [
-      "Natural Language PDF QA",
-      "Semantic Retrieval & Embeddings",
-      "Vector Search Passage Matching",
-      "Context-Aware LLM Answering",
-    ],
-    detailedPoints: [
-      {
-        title: "Document Assistant Architecture",
-        desc: "Built a document assistant supporting natural-language questions about PDF content.",
-      },
-      {
-        title: "Semantic Vector Retrieval",
-        desc: "Implemented semantic retrieval using embeddings and vector search to find relevant document passages.",
-      },
-      {
-        title: "Context-Aware LLM Integration",
-        desc: "Integrated an LLM with retrieved context to generate context-aware answers.",
-      },
-    ],
-    tech: ["Python", "LLMs", "Embeddings", "Vector Search", "LangChain", "FAISS"],
-    github:
-      "https://github.com/Parul077/QueryPDF-AI-Powered-Document-Assistant",
+      "An AI-powered document knowledge assistant combining web scraping with semantic vector retrieval (FAISS) and Groq LLaMA models for low-latency, context-grounded document Q&A.",
+    tech: ["Python", "Flask", "LangChain", "FAISS", "Groq API"],
+    github: "https://github.com/Parul077/QueryPDF-AI-Powered-Document-Assistant",
     image: queryPdfImg,
   },
   {
@@ -369,78 +215,39 @@ const featuredProjects = [
     category: "COMPUTER VISION",
     status: "Completed",
     title: "Solar Panel Defect Classification",
-    subtitle: "EfficientNet Deep-Learning Defect Classifier",
     description:
-      "An EfficientNet-based deep-learning model to classify solar-panel images across six defect categories with preprocessing, augmentation, and Streamlit inference.",
-    highlights: [
-      "EfficientNet Deep-Learning Model",
-      "6 Defect Categories Classification",
-      "Image Preprocessing & Augmentation",
-      "Automated Streamlit Prediction UI",
-    ],
-    detailedPoints: [
-      {
-        title: "EfficientNet Model Architecture",
-        desc: "Developed an EfficientNet-based deep-learning model to classify solar-panel images across six defect categories.",
-      },
-      {
-        title: "Data Preparation & Augmentation",
-        desc: "Applied image preprocessing and augmentation to prepare image inputs and support model training.",
-      },
-      {
-        title: "Streamlit Interface & Inference",
-        desc: "Built a Streamlit interface for image upload and automated defect prediction.",
-      },
-    ],
-    tech: ["Python", "TensorFlow", "EfficientNet", "Streamlit", "Computer Vision"],
+      "An EfficientNet deep learning model trained to classify solar panel anomalies across 6 defect categories, featuring real-time Streamlit inference and Plotly confidence distributions.",
+    tech: ["Python", "TensorFlow", "EfficientNet", "Streamlit", "Plotly"],
     github: "https://github.com/Parul077/Solar_panel_defect_classifier",
     image: solarImg,
   },
   {
     number: "06",
-    category: "RAG APPLICATION",
+    category: "AI CAREER ASSISTANT",
     status: "Live",
     title: "AI Career Coach",
-    subtitle: "Resume Analysis • Skill Gap Analysis • Career Guidance",
     description:
-      "RAG-powered career assistant that analyzes resumes, identifies skill gaps, and generates personalized career guidance using semantic search and LLMs.",
-    highlights: [
-      "Resume Parsing",
-      "Skill Gap Analysis",
-      "Semantic Search",
-      "Career Roadmap",
-    ],
-    tech: ["Python", "Flask", "LangChain", "FAISS", "Groq", "Render"],
+      "A RAG-powered assistant that semantically analyzes resumes, identifies candidate skill gaps against target benchmarks, and generates personalized career roadmaps.",
+    tech: ["Python", "Flask", "LangChain", "FAISS", "Groq API"],
     github: "https://github.com/Parul077/AI-Career-Coach",
     live: "https://ai-career-coach-1-5e5m.onrender.com/",
     image: aiCoachImg,
   },
 ];
 
-// Color-coded status badge utility
 const getStatusBadgeStyle = (status) => {
   switch (status.toLowerCase()) {
     case "live":
       return "bg-green-500/15 text-green-400 border-green-500/30";
     case "completed":
       return "bg-blue-500/15 text-blue-400 border-blue-500/30";
-    case "coming soon":
-      return "bg-amber-500/15 text-amber-400 border-amber-500/30";
     default:
       return "bg-gray-500/15 text-gray-400 border-gray-500/30";
   }
 };
 
 const FeaturedProjects = () => {
-  const [expandedProjects, setExpandedProjects] = useState({});
   const [activeSandbox, setActiveSandbox] = useState(null);
-
-  const toggleExpand = (title) => {
-    setExpandedProjects((prev) => ({
-      ...prev,
-      [title]: !prev[title],
-    }));
-  };
 
   return (
     <section
@@ -464,28 +271,25 @@ const FeaturedProjects = () => {
           <div className="w-12 h-[3px] rounded-full bg-gradient-to-r from-[#64ffda] to-purple-500 mt-3" />
         </motion.div>
 
-        {/* 2-Card Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* 2-Column Clean Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
           {featuredProjects.map((project) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.35 }}
               className="flex flex-col justify-between bg-[#0d0d1a] border border-white/10 rounded-2xl overflow-hidden p-6 transition-all duration-300 hover:border-[#64ffda]/30 hover:-translate-y-1 hover:shadow-2xl"
             >
-              {/* Card Main Body */}
               <div>
-                {/* Banner: Image, JevEngineBanner, SyntheticDataBanner or GlitchRoomBanner */}
-                <div className="group overflow-hidden rounded-lg border border-[#233554] bg-[#0a192f] mb-4 h-48 w-full">
+                {/* Visual Banner */}
+                <div className="group overflow-hidden rounded-xl border border-white/10 bg-[#070712] mb-4 h-48 w-full">
                   {project.isJevEngine ? (
                     <JevEngineBanner />
                   ) : project.isSyntheticData ? (
                     <SyntheticDataBanner />
                   ) : project.isGlitchRoom ? (
-                    <GlitchRoomBanner liveUrl={project.live} />
-                  ) : project.status === "Coming Soon" ? (
                     <GlitchRoomBanner liveUrl={project.live} />
                   ) : (
                     <img
@@ -497,167 +301,76 @@ const FeaturedProjects = () => {
                 </div>
 
                 {/* Category & Status */}
-                <div className="flex items-center justify-between gap-2 mb-2">
-                  <div className="flex items-center gap-2 truncate">
-                    <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-[#64ffda]/10 text-[#64ffda] border border-[#64ffda]/30">
-                      #{project.number}
-                    </span>
-                    <span className="text-xs font-semibold tracking-wider text-[#64ffda] truncate">
-                      {project.category}
-                    </span>
-                  </div>
+                <div className="flex items-center justify-between gap-2 mb-2.5">
+                  <span className="text-[11px] font-mono font-semibold tracking-wider text-[#64ffda]">
+                    #{project.number} · {project.category}
+                  </span>
                   <span
-                    className={`text-[10px] px-2.5 py-0.5 rounded-full font-medium border shrink-0 ${getStatusBadgeStyle(
-                      project.status,
+                    className={`text-[10px] px-2.5 py-0.5 rounded-full font-mono border ${getStatusBadgeStyle(
+                      project.status
                     )}`}
                   >
                     {project.status}
                   </span>
                 </div>
 
-                {/* Title & Subtitle */}
-                <h3 className="text-xl font-bold text-[#ccd6f6]">
+                {/* Title */}
+                <h3 className="text-xl font-bold text-white font-display mb-2">
                   {project.title}
                 </h3>
-                <p className="text-[#64ffda] text-xs mt-0.5 font-medium line-clamp-1">
-                  {project.subtitle}
-                </p>
 
-                {/* Description */}
-                <p className="text-gray-300 text-xs leading-relaxed mt-3">
+                {/* Clean, Simple Description */}
+                <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
-
-                {/* Highlights */}
-                <div className="mt-4 pt-3 border-t border-[#233554]/60">
-                  <span className="text-[10px] font-bold tracking-wider text-gray-400 uppercase">
-                    Highlights
-                  </span>
-                  <div className="grid grid-cols-2 gap-2 mt-2">
-                    {project.highlights.slice(0, 4).map((item) => (
-                      <div
-                        key={item}
-                        className="flex items-center gap-1.5 text-gray-300 text-xs"
-                      >
-                        <CheckCircle2
-                          size={13}
-                          className="text-[#64ffda] shrink-0"
-                        />
-                        <span className="truncate">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Detailed Architectural Pillars (if present) */}
-                {project.detailedPoints && (
-                  <div className="mt-4 pt-3 border-t border-[#233554]/60">
-                    <button
-                      onClick={() => toggleExpand(project.title)}
-                      className="flex items-center justify-between w-full text-xs font-medium text-[#64ffda] hover:text-[#64ffda]/80 transition-colors py-1 cursor-pointer bg-[#0a192f]/60 hover:bg-[#0a192f] border border-[#233554] rounded-lg px-3"
-                    >
-                      <span className="flex items-center gap-2">
-                        <Cpu size={14} className="text-[#64ffda]" />
-                        <span>
-                          {expandedProjects[project.title]
-                            ? "Hide Key Details & Architecture"
-                            : "View Key Details & Technical Breakdown"}
-                        </span>
-                      </span>
-                      {expandedProjects[project.title] ? (
-                        <ChevronUp size={14} />
-                      ) : (
-                        <ChevronDown size={14} />
-                      )}
-                    </button>
-
-                    <AnimatePresence>
-                      {expandedProjects[project.title] && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="mt-3 space-y-2.5 overflow-hidden"
-                        >
-                          {project.detailedPoints.map((item, idx) => (
-                            <div
-                              key={idx}
-                              className="p-3 rounded-lg bg-[#0a192f]/90 border border-[#233554] text-xs transition-all hover:border-[#64ffda]/30"
-                            >
-                              <p className="font-semibold text-[#ccd6f6] flex items-center gap-2 mb-1.5">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#64ffda] shrink-0" />
-                                <span>{item.title}</span>
-                              </p>
-                              <p className="text-gray-300 text-[11px] leading-relaxed pl-3.5">
-                                {item.desc}
-                              </p>
-                            </div>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                )}
               </div>
 
-              {/* Card Footer */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 pt-3 border-t border-[#233554]/60">
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-1.5 max-w-[55%]">
+              {/* Card Footer: Tech tags + Action buttons */}
+              <div className="pt-4 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-2">
+                {/* Clean Tech Pills (Max 5) */}
+                <div className="flex flex-wrap gap-1.5">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="text-[10px] px-2 py-0.5 rounded bg-[#0a192f] border border-[#233554] text-[#64ffda] font-mono"
+                      className="text-[11px] px-2.5 py-0.5 rounded-md bg-[#16172e] border border-white/10 text-gray-300 font-mono"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Buttons */}
-                <div className="flex items-center gap-2 shrink-0 flex-wrap sm:flex-nowrap">
-                  {/* Interactive Sandbox Button */}
+                {/* Direct Action Buttons */}
+                <div className="flex items-center gap-2 shrink-0">
                   <button
                     onClick={() => setActiveSandbox(project)}
-                    className="flex items-center gap-1.5 rounded bg-emerald-500/10 border border-emerald-500/40 px-3 py-1.5 text-xs font-semibold text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-400 transition-all cursor-pointer shadow-sm shadow-emerald-500/10"
-                    title="Open live interactive sandbox for this project"
+                    className="flex items-center gap-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1.5 text-xs font-mono font-semibold text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-400 transition-all cursor-pointer"
                   >
                     <Zap size={13} className="text-emerald-400 animate-pulse" />
                     <span>Try Sandbox</span>
                   </button>
 
-                  {project.status === "Coming Soon" ? (
-                    <span className="flex items-center gap-1.5 rounded bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 text-xs font-semibold text-amber-400 cursor-not-allowed">
-                      <Clock size={13} />
-                      <span>Coming Soon</span>
-                    </span>
-                  ) : (
-                    <>
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="flex items-center gap-1.5 rounded border border-[#64ffda] px-3 py-1.5 text-xs font-medium text-[#64ffda] transition-all duration-200 hover:bg-[#64ffda]/10"
-                        >
-                          <FaGithub size={13} />
-                          <span>Code</span>
-                        </a>
-                      )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-mono text-white hover:border-[#64ffda] hover:text-[#64ffda] transition-all"
+                    >
+                      <FaGithub size={13} />
+                      <span>Code</span>
+                    </a>
+                  )}
 
-                      {project.live && (
-                        <a
-                          href={project.live}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="flex items-center gap-1.5 rounded bg-[#64ffda] px-3 py-1.5 text-xs font-semibold text-[#0a192f] transition-all duration-200 hover:bg-[#52e0c4]"
-                        >
-                          <ExternalLink size={13} />
-                          <span>Demo</span>
-                        </a>
-                      )}
-                    </>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-1.5 rounded-xl bg-[#64ffda] px-3.5 py-1.5 text-xs font-mono font-bold text-[#07070f] hover:bg-[#52e0c4] transition-all"
+                    >
+                      <ExternalLink size={13} />
+                      <span>Live</span>
+                    </a>
                   )}
                 </div>
               </div>
