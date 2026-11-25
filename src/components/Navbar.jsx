@@ -55,34 +55,8 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className="fixed top-0 w-full z-50 bg-[#07070f]/80 backdrop-blur-xl border-b border-white/10"
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Brand / Logo */}
-        <a
-          href="#hero"
-          className="flex items-center gap-3 shrink-0 mr-4 group"
-        >
-          <div
-            className="w-10 h-10 rounded-lg
-            border border-[#64ffda]/40
-            bg-[#0d0d1a]
-            flex items-center justify-center
-            text-[#64ffda]
-            font-mono font-bold text-base
-            shadow-[0_0_12px_rgba(100,255,218,0.15)]
-            group-hover:border-[#64ffda] transition-all duration-300"
-          >
-            PS
-          </div>
-
-          <div className="hidden sm:block">
-            <h2 className="text-[#ccd6f6] font-semibold leading-none text-base">
-              Parul Singh
-            </h2>
-            <p className="text-xs text-gray-400 mt-1 font-mono">AI • ML Engineer</p>
-          </div>
-        </a>
-
-        {/* Desktop Nav Items */}
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-end lg:justify-center items-center">
+        {/* Desktop Nav Items (Centered) */}
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navItems.map((item) => {
             const section = item.name.toLowerCase();
