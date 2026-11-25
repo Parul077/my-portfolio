@@ -1,121 +1,293 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-
-const stats = [
-  { value: "10+", label: "AI/ML Projects" },
-  { value: "154+", label: "Technical Blogs" },
-  { value: "15+", label: "Technologies" },
-  { value: "8.62", label: "CGPA" },
-];
+import { Terminal, FileCode, ArrowRight, ExternalLink } from "lucide-react";
+import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
+import ConstellationGraph from "./ConstellationGraph";
 
 const Hero = () => {
+  const [activeTab, setActiveTab] = useState("yaml"); // 'yaml' or 'telemetry'
+
+  const floatingMetrics = [
+    {
+      metric: "154+",
+      label: "Technical Blogs Published",
+      sub: "Medium AI/ML Deep Dives",
+      accent: "text-amber-400",
+      dot: "bg-amber-400",
+    },
+    {
+      metric: "100%",
+      label: "Test Integrity",
+      sub: "Deterministic AST Gate (~4x Efficiency)",
+      accent: "text-[#64ffda]",
+      dot: "bg-[#64ffda]",
+    },
+    {
+      metric: "8.62",
+      label: "Academic CGPA",
+      sub: "Computer Science Engineering",
+      accent: "text-purple-400",
+      dot: "bg-purple-400",
+    },
+    {
+      metric: "IIT Kanpur",
+      label: "SURGE Research Intern",
+      sub: "ERC Tracker Development",
+      accent: "text-emerald-400",
+      dot: "bg-emerald-400",
+    },
+  ];
+
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] flex items-center px-8 md:px-24 pt-28 pb-16 overflow-hidden bg-[#0a192f]"
+      className="relative min-h-screen bg-[#07070f] flex items-center pt-28 pb-16 px-6 sm:px-10 lg:px-16 overflow-hidden cosmic-grid"
     >
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(100,255,218,0.06),transparent_40%)] pointer-events-none"></div>
+      {/* Ambient Cosmic Radial Glows */}
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto w-full">
-        {/* Availability Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="inline-flex items-center gap-2 bg-[#112240] border border-[#64ffda]/20 rounded-full px-3.5 py-1.5 mb-5"
-        >
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span className="text-[#64ffda] text-xs font-medium">
-            Open to AI/ML, Data Engineering & Data Science Roles
-          </span>
-        </motion.div>
-
-        {/* Intro Tag */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15 }}
-          className="text-[#64ffda] text-xs sm:text-sm font-medium mb-2"
-        >
-          Hi, my name is
-        </motion.p>
-
-        {/* Main Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-3xl sm:text-5xl md:text-6xl font-bold text-[#ccd6f6] tracking-tight"
-        >
-          Parul Singh
-        </motion.h1>
-
-        {/* Roles Subtitle */}
-        <motion.h2
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25 }}
-          className="text-lg sm:text-2xl md:text-3xl font-semibold text-gray-400 mt-2 leading-snug"
-        >
-          AI/ML Engineer • Data Engineer • Python Developer
-        </motion.h2>
-
-        {/* Description Body */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="text-gray-300 mt-4 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed"
-        >
-          Computer Science graduate and AI/ML Intern with hands-on experience
-          building Python applications, data-processing and synthetic-data
-          pipelines, Django automation systems, and LLM/RAG solutions. Skilled
-          in data validation, statistical checks, semantic retrieval, and
-          multi-step AI agent runtimes.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35 }}
-          className="flex flex-wrap gap-3.5 mt-6"
-        >
-          <a
-            href="#featured-projects"
-            className="px-5 py-2.5 rounded-lg bg-[#64ffda] text-[#0a192f] text-xs sm:text-sm font-semibold hover:bg-[#64ffda]/90 transition-all duration-200"
+      <div className="relative max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        {/* Left Column: Headline, Bio, Interactive Spec Card & CTAs */}
+        <div className="lg:col-span-7 flex flex-col justify-center">
+          {/* Status Pill with Pulsing Signal */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0d0d1a] border border-[#64ffda]/30 self-start mb-6 shadow-[0_0_15px_rgba(100,255,218,0.1)]"
           >
-            Explore Projects
-          </a>
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-xs font-mono text-gray-300">
+              AI/ML Engineer · Autonomous Agent Runtimes · Data Science
+            </span>
+          </motion.div>
 
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-lg border border-[#64ffda] text-[#64ffda] text-xs sm:text-sm font-medium hover:bg-[#64ffda]/10 transition-all duration-200"
+          {/* Giant Dual-Layer Editorial Headline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="select-none leading-none mb-4"
           >
-            Download Resume
-          </a>
-        </motion.div>
-
-        {/* Clean Borderless Stats */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-12 max-w-2xl"
-        >
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#64ffda]">
-                {stat.value}
-              </h3>
-              <p className="text-gray-400 text-xs sm:text-sm mt-1">
-                {stat.label}
-              </p>
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight text-white font-display uppercase">
+              Parul
+            </h1>
+            <div className="flex items-baseline">
+              <span className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight text-stroke font-display uppercase">
+                Singh
+              </span>
+              <span className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-[#64ffda] animate-pulse ml-1">
+                .
+              </span>
             </div>
-          ))}
-        </motion.div>
+          </motion.div>
+
+          {/* Crisp Point-of-View Pitch */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl font-sans mb-6"
+          >
+            I engineer <span className="text-[#64ffda] font-medium">deterministic AI runtimes</span>,{" "}
+            <span className="text-white font-medium">synthetic data pipelines</span>, and{" "}
+            production machine learning models from scratch. Specializing in mechanical AST
+            validation, statistical data quality, and agentic workflows that actually ship.
+          </motion.p>
+
+          {/* Interactive Engineering Spec / Telemetry Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.25 }}
+            className="mb-8 rounded-xl bg-[#0c0d1c] border border-white/10 overflow-hidden shadow-2xl max-w-2xl"
+          >
+            {/* Terminal Tab Bar */}
+            <div className="flex items-center justify-between px-4 py-2.5 bg-[#090a15] border-b border-white/10 text-xs font-mono">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setActiveTab("yaml")}
+                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded transition-colors cursor-pointer ${
+                    activeTab === "yaml"
+                      ? "bg-[#181930] text-[#64ffda] border border-[#64ffda]/30"
+                      : "text-gray-400 hover:text-gray-200"
+                  }`}
+                >
+                  <FileCode size={13} />
+                  <span>engineer_spec.yaml</span>
+                </button>
+
+                <button
+                  onClick={() => setActiveTab("telemetry")}
+                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded transition-colors cursor-pointer ${
+                    activeTab === "telemetry"
+                      ? "bg-[#181930] text-amber-400 border border-amber-400/30"
+                      : "text-gray-400 hover:text-gray-200"
+                  }`}
+                >
+                  <Terminal size={13} />
+                  <span>runtime_telemetry.log</span>
+                </button>
+              </div>
+
+              <span className="text-[10px] text-gray-500 hidden sm:inline">
+                interactive // click tab
+              </span>
+            </div>
+
+            {/* Terminal Body */}
+            <div className="p-4 font-mono text-[11px] sm:text-xs leading-relaxed overflow-x-auto text-gray-300 bg-[#070712]/90">
+              {activeTab === "yaml" ? (
+                <div>
+                  <p className="text-gray-500"># engineer_spec.yaml - production AI/ML engineer</p>
+                  <p>
+                    <span className="text-indigo-400">profile</span>:{" "}
+                    <span className="text-white font-semibold">"Parul Singh"</span>
+                  </p>
+                  <p>
+                    <span className="text-indigo-400">core_architecture</span>:{" "}
+                    <span className="text-[#64ffda]">[Autonomous State Runtimes, Synthetic Data, LLMs]</span>
+                  </p>
+                  <p className="text-indigo-400 mt-1">credo:</p>
+                  <p className="pl-4 text-emerald-300">
+                    - "Synthesizing domain-tailored datasets from scratch for Finance, Healthcare & Manufacturing"
+                  </p>
+                  <p className="pl-4 text-emerald-300">
+                    - "AST syntax checks & 3-strike circuit breakers to tame untrusted coding agents"
+                  </p>
+                  <p className="pl-4 text-emerald-300">
+                    - "Authored 154 Medium articles demystifying deep learning math & architecture"
+                  </p>
+                  <p className="mt-1">
+                    <span className="text-indigo-400">status</span>:{" "}
+                    <span className="text-amber-400">[ready_for_production, open_to_fresher_roles]</span>
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-1">
+                  <p className="text-gray-400">
+                    <span className="text-[#64ffda]">parul@runtime:~$</span> init_engineer --mode=production
+                  </p>
+                  <p className="text-emerald-400">
+                    ✔ [AST KERNEL] Mechanical checks & worktree isolation initialized.
+                  </p>
+                  <p className="text-cyan-300">
+                    ✔ [SYNTH DATA] 12-rule statistical engine active (bounded self-repair verified).
+                  </p>
+                  <p className="text-purple-300">
+                    ✔ [WRITING] 154 technical articles indexed (Medium Top Contributor).
+                  </p>
+                  <p className="text-amber-300">
+                    ▶ [RUNTIME] Target: AI/ML Engineer • Data Science (Ready to Ship).
+                  </p>
+                </div>
+              )}
+            </div>
+          </motion.div>
+
+          {/* Action CTAs & Socials */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="flex flex-wrap items-center gap-4"
+          >
+            {/* Primary Glow CTA */}
+            <a
+              href="#featured-projects"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-[#64ffda] text-[#07070f] font-bold text-xs sm:text-sm shadow-[0_0_20px_rgba(100,255,218,0.25)] hover:shadow-[0_0_25px_rgba(167,139,250,0.4)] transition-all duration-300 hover:scale-[1.02]"
+            >
+              <span>Explore Featured Sandboxes ✦</span>
+              <ArrowRight size={15} />
+            </a>
+
+            {/* Download Resume Button */}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl border border-white/20 text-gray-200 text-xs sm:text-sm font-medium hover:border-[#64ffda] hover:text-[#64ffda] hover:bg-[#64ffda]/5 transition-all duration-200"
+            >
+              <span>Download Resume</span>
+              <ExternalLink size={14} />
+            </a>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-2.5 ml-0 sm:ml-2">
+              <a
+                href="https://github.com/Parul077"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2.5 rounded-lg bg-[#0d0d1a] border border-white/10 text-gray-400 hover:text-white hover:border-[#64ffda]/40 transition-colors"
+                title="GitHub"
+              >
+                <FaGithub size={16} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/parul-singh-48a042220/"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2.5 rounded-lg bg-[#0d0d1a] border border-white/10 text-gray-400 hover:text-white hover:border-[#64ffda]/40 transition-colors"
+                title="LinkedIn"
+              >
+                <FaLinkedin size={16} />
+              </a>
+              <a
+                href="https://medium.com/@parulsingh0708"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2.5 rounded-lg bg-[#0d0d1a] border border-white/10 text-gray-400 hover:text-white hover:border-[#64ffda]/40 transition-colors"
+                title="Medium (154 Articles)"
+              >
+                <FaMedium size={16} />
+              </a>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Right Column: Interactive Constellation Graph + Floating Metric Badges */}
+        <div className="lg:col-span-5 flex flex-col items-center justify-center space-y-6">
+          {/* Interactive 3D Knowledge Constellation */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full bg-[#0d0d1a]/80 border border-white/10 rounded-2xl p-2 relative shadow-2xl"
+          >
+            <ConstellationGraph />
+          </motion.div>
+
+          {/* Floating Metric Capsules Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.35 }}
+            className="w-full grid grid-cols-2 gap-3"
+          >
+            {floatingMetrics.map((item, idx) => (
+              <div
+                key={idx}
+                className="p-3 rounded-xl bg-[#0d0d1a]/90 border border-white/10 hover:border-[#64ffda]/30 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div className="flex items-center gap-1.5 mb-1">
+                  <span className={`w-1.5 h-1.5 rounded-full ${item.dot} animate-pulse`} />
+                  <span className={`text-base sm:text-lg font-bold font-mono ${item.accent}`}>
+                    {item.metric}
+                  </span>
+                </div>
+                <div>
+                  <p className="text-[11px] font-semibold text-gray-200 leading-tight">
+                    {item.label}
+                  </p>
+                  <p className="text-[10px] text-gray-400 font-mono mt-0.5 truncate">
+                    {item.sub}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

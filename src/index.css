@@ -2,6 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #07070f;
+  --bg2: #0d0d1a;
+  --bg3: #111222;
+  --border: rgba(255, 255, 255, 0.08);
+  --border2: rgba(255, 255, 255, 0.14);
+  --cyan: #64ffda;
+  --purple: #a78bfa;
+  --amber: #fb923c;
+}
+
 html {
   scroll-behavior: smooth;
+  background-color: #07070f;
+  color: #f0eef8;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07070f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c1d33;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2b4a;
+}
+
+/* Outlined Display Headline */
+.text-stroke {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.85);
+  color: transparent;
+  transition: all 0.3s ease;
+}
+
+.text-stroke:hover {
+  -webkit-text-stroke: 1.5px #64ffda;
+  text-shadow: 0 0 20px rgba(100, 255, 218, 0.35);
+}
+
+@media (min-width: 768px) {
+  .text-stroke {
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.85);
+  }
+}
+
+/* Subtle Cosmic Space Grid Background */
+.cosmic-grid {
+  background-image: 
+    radial-gradient(rgba(100, 255, 218, 0.08) 1px, transparent 1px),
+    radial-gradient(rgba(167, 139, 250, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px;
+  background-position: 0 0, 16px 16px;
 }

@@ -11,7 +11,7 @@ import Achievements from "./components/Achievements";
 
 function App() {
   return (
-    <div className="bg-[#0a192f] min-h-screen text-white">
+    <div className="bg-[#07070f] min-h-screen text-gray-100 font-sans selection:bg-[#64ffda]/20 selection:text-[#64ffda]">
       <Navbar />
       <Hero />
       <About />
