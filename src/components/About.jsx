@@ -1,30 +1,40 @@
 import { motion } from "framer-motion";
-import { Target, BookOpen, Rocket, CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Cpu, Database } from "lucide-react";
 
 const quickFacts = [
   { label: "Education", value: "B.Tech CSE (CPI: 8.62 / 10)" },
-  { label: "Location", value: "India" },
-  { label: "Open To", value: "Python Dev • AI/ML • Data Eng • Data Science • Data Analyst" },
+  { label: "Current Role", value: "Data Analyst Intern @ Bluestock" },
+  { label: "Target Roles", value: "AI/ML • Data Science • Python Dev" },
 ];
 
-const learningAreas = [
-  "Synthetic Data Generation",
-  "Model Training & Tuning",
-  "Backtesting (Finance, Health, Mfg)",
-  "Non-Technical Reporting",
-  "LLMs & RAG",
+const pillars = [
+  {
+    icon: <Cpu size={18} className="text-[#64ffda]" />,
+    title: "Deterministic Agent Runtimes",
+    desc: "Mechanical AST syntax checks & Git worktree isolation to safely gate untrusted code-generation agents.",
+  },
+  {
+    icon: <Database size={18} className="text-emerald-400" />,
+    title: "Statistical Data Pipelines",
+    desc: "Specification-driven synthetic datasets with automated 12-rule statistical validation and bounded repair.",
+  },
+  {
+    icon: <ShieldCheck size={18} className="text-purple-400" />,
+    title: "End-to-End System Delivery",
+    desc: "From web-scraping ETL and RAG vector search to full-stack platforms like The Glitch Room.",
+  },
 ];
 
 const About = () => {
   return (
-    <section id="about" className="bg-[#07070f] px-6 sm:px-12 md:px-24 py-24 border-t border-white/5">
+    <section id="about" className="bg-[#07070f] px-6 sm:px-12 md:px-24 py-20 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-10"
         >
           <span className="text-xs font-mono text-[#64ffda] uppercase tracking-wider font-semibold">
             01. Background & Profile
@@ -35,53 +45,40 @@ const About = () => {
           <div className="w-12 h-[3px] rounded-full bg-gradient-to-r from-[#64ffda] to-purple-500 mt-3" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
+        <div className="grid lg:grid-cols-[1fr_1fr] gap-10 items-start">
           {/* Left Column: Short Bio & Quick Facts */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            {/* Greeting & Intro Paragraphs */}
             <div>
-              <h3 className="text-xl font-bold text-white mb-3">
+              <h3 className="text-xl font-bold text-white mb-3 font-display">
                 Hi, I'm <span className="text-[#64ffda]">Parul Singh</span>.
               </h3>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                Computer Science graduate with completed AI/ML and research internships and
-                current Data Analyst internship experience. Hands-on experience building
-                Python applications, data-processing and synthetic-data pipelines, Django
-                automation systems, and LLM/RAG solutions. Skilled in data validation,
-                statistical checks, semantic retrieval, model workflows, Python, SQL, and
-                exploratory data analysis (EDA).
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Computer Science graduate with internship experience spanning data analytics at{" "}
+                <span className="text-white font-medium">Bluestock Fintech</span>, AI agent error
+                mitigation at <span className="text-white font-medium">FAC Infosec</span>, and
+                regulatory automation at <span className="text-white font-medium">IIT Kanpur</span>.
               </p>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed mt-4">
-                Experienced in translating specifications into working applications and automated
-                workflows. Having designed and shipped platforms like{" "}
-                <a
-                  href="https://joinglitchroom.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[#64ffda] font-medium hover:underline"
-                >
-                  The Glitch Room
-                </a>
-                , I also author technical deep dives on Medium, demystifying AI and Machine
-                Learning fundamentals for a community of over 150+ articles.
+              <p className="text-gray-300 text-sm leading-relaxed mt-3">
+                I focus on engineering reliable systems—bridging raw ML models with deterministic
+                scaffolding, statistical validation, and production-ready automated workflows.
               </p>
             </div>
 
             {/* Quick Facts Grid */}
             <div className="pt-2">
-              <h4 className="text-xs uppercase tracking-wider text-gray-400 font-mono font-semibold mb-4">
+              <h4 className="text-xs uppercase tracking-wider text-gray-400 font-mono font-semibold mb-3">
                 Quick Facts
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {quickFacts.map((fact) => (
                   <div
                     key={fact.label}
-                    className="bg-[#0d0d1a] border border-white/10 rounded-xl p-4 transition-all duration-300 hover:border-[#64ffda]/40 hover:-translate-y-0.5"
+                    className="bg-[#0d0d1a] border border-white/10 rounded-xl p-3.5 transition-all duration-300 hover:border-[#64ffda]/40"
                   >
                     <p className="text-[11px] text-[#64ffda] font-mono font-medium uppercase tracking-wider">
                       {fact.label}
@@ -95,50 +92,47 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Right Column: Currently Learning & Career Goal */}
+          {/* Right Column: Engineering Philosophy Card (Concise, Non-Repeating) */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="bg-[#0d0d1a] border border-white/10 rounded-2xl p-6 shadow-xl space-y-4"
           >
-            {/* Currently Learning Card */}
-            <div className="bg-[#0d0d1a] border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-[#64ffda]/30 shadow-xl">
-              <h3 className="text-[#64ffda] font-semibold text-base flex items-center gap-2">
-                <BookOpen size={18} />
-                <span>Currently Learning & Building</span>
-              </h3>
-              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mt-3">
-                I generate synthetic datasets from scratch, train ML models on them, perform
-                hyperparameter tuning, execute thorough backtesting across the financial,
-                healthcare, and manufacturing sectors, and translate technical metrics into
-                actionable non-technical business reports, alongside advancing LLM and agentic
-                runtimes.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {learningAreas.map((item) => (
-                  <span
-                    key={item}
-                    className="inline-flex items-center gap-1.5 text-xs text-gray-200 bg-[#16172e] border border-white/10 px-3 py-1.5 rounded-lg font-mono"
-                  >
-                    <CheckCircle2 size={13} className="text-[#64ffda]" />
-                    {item}
-                  </span>
-                ))}
-              </div>
+            <h3 className="text-white font-bold text-base font-display flex items-center justify-between pb-3 border-b border-white/5">
+              <span>Core Engineering Principles</span>
+              <span className="text-[10px] font-mono text-[#64ffda] bg-[#16172e] px-2 py-0.5 rounded border border-white/5">
+                Production Mindset
+              </span>
+            </h3>
+
+            <div className="space-y-3.5">
+              {pillars.map((pillar, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-[#16172e] border border-white/10 shrink-0 mt-0.5">
+                    {pillar.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-white font-display">
+                      {pillar.title}
+                    </h4>
+                    <p className="text-gray-400 text-xs leading-relaxed mt-0.5">
+                      {pillar.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* Career Goal Card */}
-            <div className="bg-[#0d0d1a] border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-purple-400/30 shadow-xl">
-              <h3 className="text-purple-400 font-semibold text-base flex items-center gap-2">
-                <Rocket size={18} />
-                <span>Career Goal</span>
-              </h3>
-              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mt-2.5">
-                Seeking Python Developer, AI/ML Engineer, Data Engineer, Data Science, or
-                Data Analyst opportunities that value analytical rigor, statistical data
-                integrity, and reliable production-grade engineering.
-              </p>
+            <div className="pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+              {["LangGraph", "Synthetic Data", "AST Gates", "FAISS RAG", "Pytest"].map((t) => (
+                <span
+                  key={t}
+                  className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-[#16172e] border border-white/10 text-gray-300"
+                >
+                  {t}
+                </span>
+              ))}
             </div>
           </motion.div>
         </div>

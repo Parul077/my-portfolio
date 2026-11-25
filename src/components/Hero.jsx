@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen bg-[#07070f] flex items-center pt-28 pb-16 px-6 sm:px-10 lg:px-16 overflow-hidden cosmic-grid"
+      className="relative min-h-screen bg-[#07070f] flex items-center pt-24 pb-16 px-6 sm:px-10 lg:px-16 overflow-hidden cosmic-grid"
     >
       {/* Ambient Cosmic Radial Glows */}
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -24,7 +24,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0d0d1a] border border-[#64ffda]/30 self-start mb-6 shadow-[0_0_15px_rgba(100,255,218,0.1)]"
+            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0d0d1a] border border-[#64ffda]/30 self-start mb-5 shadow-[0_0_15px_rgba(100,255,218,0.1)]"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-xs font-mono text-gray-300">
@@ -37,7 +37,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="select-none leading-none mb-4"
+            className="select-none leading-none mb-3"
           >
             <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight text-white font-display uppercase">
               Parul
@@ -52,28 +52,26 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Crisp Point-of-View Pitch */}
+          {/* Crisp Point-of-View Pitch (Concise, 1 sentence) */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl font-sans mb-6"
+            className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl font-sans mb-5"
           >
-            I engineer <span className="text-[#64ffda] font-medium">deterministic AI runtimes</span>,{" "}
-            <span className="text-white font-medium">synthetic data pipelines</span>, and{" "}
-            production machine learning models from scratch. Specializing in mechanical AST
-            validation, statistical data quality, and agentic workflows that actually ship.
+            Engineering <span className="text-[#64ffda] font-medium">deterministic AI agent runtimes</span>,{" "}
+            <span className="text-white font-medium">synthetic data pipelines</span>, and production machine learning models that ship.
           </motion.p>
 
-          {/* Interactive Engineering Spec / Telemetry Card */}
+          {/* Interactive Engineering Spec / Telemetry Card (Concise) */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.25 }}
-            className="mb-8 rounded-xl bg-[#0c0d1c] border border-white/10 overflow-hidden shadow-2xl max-w-2xl"
+            className="mb-7 rounded-xl bg-[#0c0d1c] border border-white/10 overflow-hidden shadow-2xl max-w-2xl"
           >
             {/* Terminal Tab Bar */}
-            <div className="flex items-center justify-between px-4 py-2.5 bg-[#090a15] border-b border-white/10 text-xs font-mono">
+            <div className="flex items-center justify-between px-4 py-2 bg-[#090a15] border-b border-white/10 text-xs font-mono">
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setActiveTab("yaml")}
@@ -108,27 +106,21 @@ const Hero = () => {
             {/* Terminal Body */}
             <div className="p-4 font-mono text-[11px] sm:text-xs leading-relaxed overflow-x-auto text-gray-300 bg-[#070712]/90">
               {activeTab === "yaml" ? (
-                <div>
-                  <p className="text-gray-500"># engineer_spec.yaml - production AI/ML engineer</p>
+                <div className="space-y-1">
+                  <p className="text-gray-500"># engineer_spec.yaml</p>
                   <p>
                     <span className="text-indigo-400">profile</span>:{" "}
                     <span className="text-white font-semibold">"Parul Singh"</span>
                   </p>
                   <p>
-                    <span className="text-indigo-400">core_architecture</span>:{" "}
-                    <span className="text-[#64ffda]">[Autonomous State Runtimes, Synthetic Data, LLMs]</span>
+                    <span className="text-indigo-400">architecture</span>:{" "}
+                    <span className="text-[#64ffda]">[Deterministic Agents, Synthetic Pipelines, LLMs]</span>
                   </p>
-                  <p className="text-indigo-400 mt-1">credo:</p>
-                  <p className="pl-4 text-emerald-300">
-                    - "Synthesizing domain-tailored datasets from scratch for Finance, Healthcare & Manufacturing"
+                  <p>
+                    <span className="text-indigo-400">core_stack</span>:{" "}
+                    <span className="text-emerald-300">[Python, LangGraph, Pytest, SQL, Streamlit]</span>
                   </p>
-                  <p className="pl-4 text-emerald-300">
-                    - "AST syntax checks & 3-strike circuit breakers to tame untrusted coding agents"
-                  </p>
-                  <p className="pl-4 text-emerald-300">
-                    - "Authored 154 Medium articles demystifying deep learning math & architecture"
-                  </p>
-                  <p className="mt-1">
+                  <p>
                     <span className="text-indigo-400">status</span>:{" "}
                     <span className="text-amber-400">[ready_for_production, open_to_fresher_roles]</span>
                   </p>
@@ -136,19 +128,16 @@ const Hero = () => {
               ) : (
                 <div className="space-y-1">
                   <p className="text-gray-400">
-                    <span className="text-[#64ffda]">parul@runtime:~$</span> init_engineer --mode=production
+                    <span className="text-[#64ffda]">parul@runtime:~$</span> init_engineer --status
                   </p>
                   <p className="text-emerald-400">
-                    ✔ [AST KERNEL] Mechanical checks & worktree isolation initialized.
+                    ✔ [AST GATES] Mechanical checks & Git worktree isolation active.
                   </p>
                   <p className="text-cyan-300">
-                    ✔ [SYNTH DATA] 12-rule statistical engine active (bounded self-repair verified).
-                  </p>
-                  <p className="text-purple-300">
-                    ✔ [WRITING] 154 technical articles indexed (Medium Top Contributor).
+                    ✔ [SYNTH PIPELINE] 12-rule statistical engine verified (0 leakage).
                   </p>
                   <p className="text-amber-300">
-                    ▶ [RUNTIME] Target: AI/ML Engineer • Data Science (Ready to Ship).
+                    ▶ [DEPLOY] Target: AI/ML Engineer · Data Science (Ready to Ship).
                   </p>
                 </div>
               )}
